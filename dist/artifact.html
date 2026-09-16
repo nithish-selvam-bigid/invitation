@@ -1,0 +1,772 @@
+<title>Nithish &amp; Ramapriya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Marcellus&family=Jost:wght@300;400&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+
+<style>
+/* ===========================================================================
+   Nichayathartham — Nithish & Ramapriya
+   A committed single-theme design: a letterpress invitation card on handmade
+   paper. Every colour is painted explicitly so it holds on any host ground.
+   ========================================================================= */
+
+:root{
+  --maroon:#5c1a1b;
+  --maroon-deep:#3d0f11;
+  --red-muted:#8c2f2c;
+  --gold:#b08d3f;
+  --gold-bright:#c9a227;
+  --gold-pale:#e6d3a3;
+  --ivory:#fffdf7;
+  --cream:#f4e9d7;
+  --ink:#3a2a22;
+  --ink-soft:#6f5849;
+
+  --display:"Marcellus",Georgia,"Times New Roman",serif;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --body:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --deva:"Tiro Devanagari Hindi","Noto Serif Devanagari",Georgia,serif;
+
+  --gutter:clamp(1rem,4vw,2.5rem);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --hairline:1px solid rgba(176,141,63,.45);
+  color-scheme:light;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+body{
+  margin:0;
+  padding:0;
+  font-family:var(--body);
+  font-weight:300;
+  font-size:clamp(.98rem,.94rem + .2vw,1.05rem);
+  line-height:1.75;
+  color:var(--ink);
+  background-color:var(--cream);
+  background-image:radial-gradient(ellipse at 50% 0%,#fffdf7 0%,rgba(248,240,225,.65) 52%,rgba(237,223,199,.9) 100%);
+  overflow-x:hidden;
+}
+
+/* handmade-paper grain + kolam dot grid */
+.ground{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.5;
+  mix-blend-mode:multiply;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23p)' opacity='.38'/%3E%3C/svg%3E"),
+    radial-gradient(circle at 14px 14px,rgba(92,26,27,.15) 1px,transparent 1.2px);
+  background-size:220px 220px,28px 28px;
+}
+
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--gold-bright);outline-offset:4px}
+
+/* ── shell ─────────────────────────────────────────────────────────────── */
+.shell{
+  position:relative;
+  z-index:1;
+  max-width:60rem;
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+  padding-block:clamp(3.5rem,9vw,5.5rem) clamp(3rem,8vw,5rem);
+  display:grid;
+  gap:clamp(3rem,8vw,5.5rem);
+}
+
+/* mango-leaf toran strung across the top of the page */
+.toran{
+  position:absolute;
+  inset-inline:0;
+  top:0;
+  height:clamp(38px,6vw,62px);
+  color:var(--red-muted);
+  opacity:.5;
+  pointer-events:none;
+  z-index:1;
+}
+.toran svg{width:100%;height:100%}
+.toran--bottom{top:auto;bottom:0;transform:scaleY(-1)}
+
+/* ── type ──────────────────────────────────────────────────────────────── */
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:0;text-wrap:balance}
+
+.invocation{
+  font-family:var(--deva);
+  color:var(--red-muted);
+  font-size:clamp(.88rem,.84rem + .3vw,1.05rem);
+  margin:0 0 1.4rem;
+}
+
+.eyebrow{
+  font-family:var(--body);
+  font-weight:400;
+  font-size:.64rem;
+  letter-spacing:.36em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin:0 0 .9rem;
+}
+
+.title{
+  font-size:clamp(1.45rem,1.15rem + 1.5vw,2.25rem);
+  color:var(--maroon);
+  line-height:1.3;
+}
+
+.names{
+  font-family:var(--display);
+  color:var(--maroon);
+  line-height:1.15;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:center;
+  gap:.1em .28em;
+  margin:0;
+}
+.names em{
+  font-family:var(--serif);
+  font-style:italic;
+  color:var(--gold-bright);
+  font-size:.62em;
+}
+
+/* ── ornaments ─────────────────────────────────────────────────────────── */
+.ornament{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.8rem;
+  max-width:18rem;
+  margin:1.4rem auto;
+  color:var(--gold);
+}
+.ornament__rule{
+  flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,currentColor 45%,currentColor 55%,transparent);
+}
+.ornament__lotus{width:3rem;height:1.9rem;flex:none;color:var(--gold-bright)}
+
+/* ── framed panel ──────────────────────────────────────────────────────── */
+.panel{
+  position:relative;
+  padding:clamp(2.25rem,7vw,4rem) clamp(1.3rem,5vw,3.5rem);
+  background:linear-gradient(180deg,rgba(255,253,247,.94),rgba(255,251,242,.88));
+  border:var(--hairline);
+  border-radius:3px;
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 30px 70px -55px rgba(61,15,17,.85);
+  text-align:center;
+}
+.panel::after{
+  content:"";
+  position:absolute;
+  inset:7px;
+  border:1px solid rgba(176,141,63,.3);
+  border-radius:2px;
+  pointer-events:none;
+}
+
+.corner{
+  position:absolute;
+  width:clamp(2.4rem,6vw,3.4rem);
+  aspect-ratio:1;
+  color:var(--gold);
+  opacity:.8;
+  pointer-events:none;
+}
+.corner svg{width:100%;height:100%}
+.corner--tl{top:10px;left:10px}
+.corner--tr{top:10px;right:10px;transform:scaleX(-1)}
+.corner--bl{bottom:10px;left:10px;transform:scaleY(-1)}
+.corner--br{bottom:10px;right:10px;transform:scale(-1)}
+
+/* ── 1 · the card ──────────────────────────────────────────────────────── */
+.card__names{font-size:clamp(2.1rem,1.2rem + 5vw,4.2rem)}
+.card__occasion{
+  margin:.7rem 0 0;
+  font-size:.66rem;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.card__tagline{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:clamp(1.05rem,.95rem + .7vw,1.4rem);
+  color:var(--red-muted);
+  margin:1rem auto 2rem;
+  max-width:24ch;
+  line-height:1.5;
+}
+.card__when{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:1rem;
+}
+.card__when-rule{
+  flex:1;max-width:4.5rem;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold));
+}
+.card__when-rule:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
+.card__when-text{display:grid;gap:.15rem}
+.card__when-text strong{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(1rem,.92rem + .5vw,1.28rem);
+  color:var(--maroon);
+  letter-spacing:.05em;
+}
+.card__when-text em{font-family:var(--serif);font-size:.98rem;color:var(--ink-soft)}
+
+/* ── 2 · the message ───────────────────────────────────────────────────── */
+.message__motif{width:clamp(3.4rem,8vw,4.6rem);height:auto;color:var(--gold);margin:0 auto 1.5rem}
+.message__lead{
+  font-family:var(--serif);
+  font-size:clamp(1.1rem,1rem + .8vw,1.5rem);
+  line-height:1.65;
+  color:var(--ink-soft);
+  max-width:32ch;
+  margin:0 auto;
+}
+.message__names{font-size:clamp(1.7rem,1.1rem + 3vw,2.9rem);margin-top:1.2rem}
+
+/* ── 3 · details ───────────────────────────────────────────────────────── */
+.details{text-align:center}
+.detail-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(1rem,3vw,1.5rem);
+  margin-top:clamp(1.8rem,5vw,2.6rem);
+}
+.detail{
+  position:relative;
+  padding:clamp(1.9rem,5vw,2.4rem) 1.3rem;
+  background:linear-gradient(180deg,rgba(255,253,247,.96),rgba(255,250,240,.9));
+  border:var(--hairline);
+  border-radius:3px;
+}
+.detail::after{content:"";position:absolute;inset:6px;border:1px solid rgba(176,141,63,.22);pointer-events:none}
+.detail__icon{
+  display:grid;place-items:center;
+  width:3.2rem;height:3.2rem;
+  margin:0 auto 1rem;
+  color:var(--maroon);
+  border:1px solid rgba(176,141,63,.55);
+  border-radius:50%;
+}
+.detail__icon svg{width:1.65rem;height:1.65rem}
+.detail__label{
+  font-family:var(--body);
+  font-size:.62rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin:0 0 .5rem;
+}
+.detail__value{
+  font-family:var(--display);
+  font-size:clamp(1.02rem,.96rem + .45vw,1.24rem);
+  color:var(--maroon);
+  margin:0 0 .4rem;
+  line-height:1.4;
+}
+.detail__note{font-family:var(--serif);font-size:1rem;color:var(--ink-soft);margin:0;line-height:1.55}
+
+/* ── 4 · vow / quote ───────────────────────────────────────────────────── */
+.vow{position:relative;overflow:hidden}
+.vow__kolam{
+  position:absolute;
+  top:50%;left:50%;
+  width:min(84%,22rem);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  color:var(--gold);
+  opacity:.16;
+  animation:rotate 180s linear infinite;
+  pointer-events:none;
+}
+.vow__quote{
+  position:relative;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:clamp(1.15rem,1rem + .95vw,1.6rem);
+  line-height:1.6;
+  color:var(--ink-soft);
+  max-width:30ch;
+  margin:0 auto 1.2rem;
+}
+.vow__names{font-size:clamp(1.5rem,1.05rem + 2.2vw,2.3rem);position:relative}
+@keyframes rotate{to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+/* ── 5 · countdown ─────────────────────────────────────────────────────── */
+.countdown{text-align:center}
+.countdown__grid{
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(.7rem,2.5vw,1.2rem);
+  max-width:38rem;
+  margin:clamp(1.6rem,4vw,2.2rem) auto 0;
+  padding:0;
+}
+.countdown__cell{
+  position:relative;
+  padding:clamp(1.05rem,3.2vw,1.6rem) .5rem;
+  background:linear-gradient(180deg,rgba(255,253,247,.96),rgba(255,249,238,.9));
+  border:var(--hairline);
+  border-radius:3px;
+}
+.countdown__cell::after{content:"";position:absolute;inset:5px;border:1px solid rgba(176,141,63,.22);pointer-events:none}
+.countdown__num{
+  display:block;
+  font-family:var(--display);
+  font-size:clamp(1.75rem,1.2rem + 2.6vw,2.7rem);
+  line-height:1;
+  color:var(--maroon);
+  font-variant-numeric:tabular-nums;
+}
+.countdown__label{
+  display:block;
+  margin-top:.5rem;
+  font-size:.58rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.countdown__done{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.2rem;
+  color:var(--red-muted);
+  margin:1.2rem 0 0;
+}
+
+/* ── 6 · families ──────────────────────────────────────────────────────── */
+.families{text-align:center}
+.families__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(1.3rem,4vw,2.2rem);
+  margin-top:clamp(1.8rem,5vw,2.6rem);
+}
+.family{
+  position:relative;
+  padding:clamp(1.9rem,5vw,2.6rem) clamp(1.2rem,4vw,2rem);
+  background:linear-gradient(180deg,rgba(255,253,247,.95),rgba(255,250,240,.88));
+  border:var(--hairline);
+  border-radius:3px;
+}
+.family::after{content:"";position:absolute;inset:6px;border:1px solid rgba(176,141,63,.22);pointer-events:none}
+.family__heading{
+  font-family:var(--body);
+  font-size:.62rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin:0 0 .9rem;
+}
+.family__relation{font-family:var(--serif);font-style:italic;color:var(--ink-soft);margin:0 0 .3rem}
+.family__parents{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
+.family__parents li{
+  font-family:var(--display);
+  font-size:clamp(1.02rem,.96rem + .45vw,1.26rem);
+  color:var(--maroon);
+  line-height:1.4;
+}
+.family__place{
+  margin:.85rem 0 0;
+  font-size:.62rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.families__vine{display:none;color:var(--gold);width:2.4rem;justify-self:center}
+.families__vine svg{width:100%;height:100%}
+.families__note{
+  font-family:var(--serif);
+  font-style:italic;
+  color:var(--ink-soft);
+  margin:clamp(1.5rem,4vw,2.2rem) auto 0;
+  max-width:34ch;
+}
+
+/* ── 7 · closing ───────────────────────────────────────────────────────── */
+.closing__motif{width:clamp(3.2rem,7vw,4.4rem);height:auto;color:var(--gold);margin:0 auto 1.4rem}
+.closing__line{
+  font-family:var(--serif);
+  font-size:clamp(1.12rem,1rem + .9vw,1.55rem);
+  line-height:1.6;
+  color:var(--ink-soft);
+  max-width:28ch;
+  margin:0 auto 1.3rem;
+}
+.closing__names{font-size:clamp(1.5rem,1.05rem + 2.2vw,2.3rem)}
+.closing__kolam{width:min(62%,13rem);height:auto;color:var(--gold);opacity:.35;margin:2.2rem auto 0}
+.closing__blessing{
+  font-family:var(--deva);
+  color:var(--red-muted);
+  margin:1.6rem 0 0;
+  font-size:1.05rem;
+}
+
+/* ── floating jasmine ──────────────────────────────────────────────────── */
+.flowers{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.flower{
+  position:absolute;
+  top:-8vh;
+  color:var(--ivory);
+  filter:drop-shadow(0 1px 1px rgba(92,26,27,.22));
+  animation:drift linear infinite;
+}
+.flower svg{width:100%;height:100%}
+.flower--gold{color:var(--gold-pale)}
+@keyframes drift{
+  0%{transform:translate3d(0,-8vh,0) rotate(0deg)}
+  100%{transform:translate3d(var(--drift,2rem),112vh,0) rotate(420deg)}
+}
+
+/* ── breakpoints ───────────────────────────────────────────────────────── */
+@media (min-width:46rem){
+  .detail-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .countdown__grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .families__grid{grid-template-columns:1fr auto 1fr;align-items:center}
+  .families__vine{display:block}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .flowers{display:none}
+}
+
+@media print{
+  .flowers,.ground{display:none}
+  body{background:#fff}
+  .panel,.detail,.family,.countdown__cell{box-shadow:none;background:#fff}
+}
+</style>
+
+<div class="ground" aria-hidden="true"></div>
+<div class="flowers" id="flowers" aria-hidden="true"></div>
+<div class="toran" aria-hidden="true"><svg viewBox="0 0 1200 90" preserveAspectRatio="none"><use href="#toran" /></svg></div>
+
+<div class="shell">
+
+  <!-- 1 · the card -->
+  <section class="panel">
+    <span class="corner corner--tl" aria-hidden="true"><svg viewBox="0 0 80 80"><use href="#corner" /></svg></span>
+    <span class="corner corner--tr" aria-hidden="true"><svg viewBox="0 0 80 80"><use href="#corner" /></svg></span>
+    <span class="corner corner--bl" aria-hidden="true"><svg viewBox="0 0 80 80"><use href="#corner" /></svg></span>
+    <span class="corner corner--br" aria-hidden="true"><svg viewBox="0 0 80 80"><use href="#corner" /></svg></span>
+
+    <p class="invocation">॥ श्री गणेशाय नमः ॥</p>
+    <h1 class="title">Engagement Invitation</h1>
+    <p class="card__occasion">Nichayathartham</p>
+
+    <div class="ornament" aria-hidden="true">
+      <span class="ornament__rule"></span>
+      <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+      <span class="ornament__rule"></span>
+    </div>
+
+    <p class="names card__names">Nithish <em>&amp;</em> Ramapriya</p>
+    <p class="card__tagline">Two hearts, one beautiful beginning.</p>
+
+    <div class="card__when">
+      <span class="card__when-rule" aria-hidden="true"></span>
+      <span class="card__when-text">
+        <strong>Sunday, 22 November 2026</strong>
+        <em>12:00 PM onwards</em>
+      </span>
+      <span class="card__when-rule" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <!-- 2 · the message -->
+  <section class="panel">
+    <svg class="message__motif" viewBox="0 0 120 120" aria-hidden="true"><use href="#jasmine-spray" /></svg>
+    <p class="message__lead">With the blessings of our families, we joyfully invite you to celebrate the engagement of</p>
+    <p class="names message__names">Nithish <em>&amp;</em> Ramapriya</p>
+    <div class="ornament" aria-hidden="true">
+      <span class="ornament__rule"></span>
+      <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+      <span class="ornament__rule"></span>
+    </div>
+    <p class="card__occasion">Nichayathartham</p>
+  </section>
+
+  <!-- 3 · details -->
+  <section class="details">
+    <p class="eyebrow">The Occasion</p>
+    <h2 class="title">Event Details</h2>
+    <div class="ornament" aria-hidden="true">
+      <span class="ornament__rule"></span>
+      <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+      <span class="ornament__rule"></span>
+    </div>
+
+    <div class="detail-grid">
+      <article class="detail">
+        <span class="detail__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#calendar" /></svg></span>
+        <h3 class="detail__label">Date</h3>
+        <p class="detail__value">Sunday, 22 November 2026</p>
+        <p class="detail__note">Shubha Muhurtham</p>
+      </article>
+
+      <article class="detail">
+        <span class="detail__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#clock" /></svg></span>
+        <h3 class="detail__label">Time</h3>
+        <p class="detail__value">12:00 PM onwards</p>
+        <p class="detail__note">Lunch will be served</p>
+      </article>
+
+      <article class="detail">
+        <span class="detail__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#gopuram" /></svg></span>
+        <h3 class="detail__label">Venue</h3>
+        <p class="detail__value">To be announced</p>
+        <p class="detail__note">Chennai &middot; details to follow</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4 · vow -->
+  <section class="panel vow">
+    <svg class="vow__kolam" viewBox="0 0 220 220" aria-hidden="true"><use href="#kolam" /></svg>
+    <p class="eyebrow">Together</p>
+    <blockquote class="vow__quote">Bound not by ceremony alone, but by the quiet promise of every day that follows.</blockquote>
+    <p class="names vow__names">Nithish <em>&amp;</em> Ramapriya</p>
+  </section>
+
+  <!-- 5 · countdown -->
+  <section class="countdown">
+    <p class="eyebrow">Counting the days</p>
+    <h2 class="title">Until the celebration</h2>
+    <ul class="countdown__grid" id="grid">
+      <li class="countdown__cell"><span class="countdown__num" data-unit="days">—</span><span class="countdown__label">Days</span></li>
+      <li class="countdown__cell"><span class="countdown__num" data-unit="hours">—</span><span class="countdown__label">Hours</span></li>
+      <li class="countdown__cell"><span class="countdown__num" data-unit="minutes">—</span><span class="countdown__label">Minutes</span></li>
+      <li class="countdown__cell"><span class="countdown__num" data-unit="seconds">—</span><span class="countdown__label">Seconds</span></li>
+    </ul>
+    <p class="countdown__done" id="done" hidden>The day has arrived. Please join us.</p>
+  </section>
+
+  <!-- 6 · families -->
+  <section class="families">
+    <p class="eyebrow">Blessings</p>
+    <h2 class="title">With the blessings of our families</h2>
+    <div class="ornament" aria-hidden="true">
+      <span class="ornament__rule"></span>
+      <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+      <span class="ornament__rule"></span>
+    </div>
+
+    <div class="families__grid">
+      <article class="family">
+        <p class="family__heading">Groom's Family</p>
+        <p class="family__relation">Son of</p>
+        <ul class="family__parents">
+          <li>Thiru. Selvam</li>
+          <li>Tmt. Kalyani Selvam</li>
+        </ul>
+        <p class="family__place">Sriperumbudur</p>
+      </article>
+
+      <div class="families__vine" aria-hidden="true"><svg viewBox="0 0 40 160" preserveAspectRatio="none"><use href="#vine" /></svg></div>
+
+      <article class="family">
+        <p class="family__heading">Bride's Family</p>
+        <p class="family__relation">Daughter of</p>
+        <ul class="family__parents">
+          <li>Thiru. Ravichandran</li>
+          <li>Tmt. Gayathri Ravichandran</li>
+        </ul>
+        <p class="family__place">Saidapet</p>
+      </article>
+    </div>
+
+    <p class="families__note">Together with their brothers, sisters and well-wishers</p>
+  </section>
+
+  <!-- 7 · closing -->
+  <section class="panel">
+    <svg class="closing__motif" viewBox="0 0 120 120" aria-hidden="true"><use href="#jasmine-spray" /></svg>
+    <p class="closing__line">We look forward to celebrating this beautiful beginning with you.</p>
+    <p class="names closing__names">Nithish <em>&amp;</em> Ramapriya</p>
+    <svg class="closing__kolam" viewBox="0 0 220 220" aria-hidden="true"><use href="#kolam" /></svg>
+    <p class="closing__blessing">॥ शुभम् भवतु ॥</p>
+  </section>
+</div>
+
+<div class="toran toran--bottom" aria-hidden="true"><svg viewBox="0 0 1200 90" preserveAspectRatio="none"><use href="#toran" /></svg></div>
+
+<svg class="sprite" aria-hidden="true" focusable="false"><defs>
+
+  <g id="kolam" fill="none" stroke="currentColor" stroke-width="1.1">
+    <circle cx="110" cy="110" r="104" stroke-dasharray="1 7" stroke-linecap="round" />
+    <circle cx="110" cy="110" r="78" />
+    <circle cx="110" cy="110" r="30" stroke-dasharray="2 6" />
+    <g id="kolam-loop">
+      <path d="M110 32 C130 56 130 76 110 96 C90 76 90 56 110 32 Z" />
+      <circle cx="110" cy="22" r="2.6" fill="currentColor" stroke="none" />
+    </g>
+    <use href="#kolam-loop" transform="rotate(45 110 110)" />
+    <use href="#kolam-loop" transform="rotate(90 110 110)" />
+    <use href="#kolam-loop" transform="rotate(135 110 110)" />
+    <use href="#kolam-loop" transform="rotate(180 110 110)" />
+    <use href="#kolam-loop" transform="rotate(225 110 110)" />
+    <use href="#kolam-loop" transform="rotate(270 110 110)" />
+    <use href="#kolam-loop" transform="rotate(315 110 110)" />
+  </g>
+
+  <g id="toran" fill="none" stroke="currentColor" stroke-width="1.4">
+    <path d="M0 10 Q300 40 600 10 Q900 40 1200 10" />
+    <g id="toran-unit">
+      <path d="M20 14 C10 34 12 56 20 72 C28 56 30 34 20 14 Z" fill="currentColor" fill-opacity=".14" />
+      <path d="M20 20 L20 66" stroke-opacity=".55" />
+    </g>
+    <use href="#toran-unit" x="30" /><use href="#toran-unit" x="60" /><use href="#toran-unit" x="90" />
+    <use href="#toran-unit" x="120" /><use href="#toran-unit" x="150" /><use href="#toran-unit" x="180" />
+    <use href="#toran-unit" x="210" /><use href="#toran-unit" x="240" /><use href="#toran-unit" x="270" />
+    <use href="#toran-unit" x="300" /><use href="#toran-unit" x="330" /><use href="#toran-unit" x="360" />
+    <use href="#toran-unit" x="390" /><use href="#toran-unit" x="420" /><use href="#toran-unit" x="450" />
+    <use href="#toran-unit" x="480" /><use href="#toran-unit" x="510" /><use href="#toran-unit" x="540" />
+    <use href="#toran-unit" x="570" /><use href="#toran-unit" x="600" /><use href="#toran-unit" x="630" />
+    <use href="#toran-unit" x="660" /><use href="#toran-unit" x="690" /><use href="#toran-unit" x="720" />
+    <use href="#toran-unit" x="750" /><use href="#toran-unit" x="780" /><use href="#toran-unit" x="810" />
+    <use href="#toran-unit" x="840" /><use href="#toran-unit" x="870" /><use href="#toran-unit" x="900" />
+    <use href="#toran-unit" x="930" /><use href="#toran-unit" x="960" /><use href="#toran-unit" x="990" />
+    <use href="#toran-unit" x="1020" /><use href="#toran-unit" x="1050" /><use href="#toran-unit" x="1080" />
+    <use href="#toran-unit" x="1110" /><use href="#toran-unit" x="1140" /><use href="#toran-unit" x="1170" />
+  </g>
+
+  <g id="lotus" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">
+    <path d="M32 6 C37 14 38 24 32 32 C26 24 27 14 32 6 Z" />
+    <path d="M32 32 C26 22 18 18 10 20 C12 28 20 33 32 33 Z" />
+    <path d="M32 32 C38 22 46 18 54 20 C52 28 44 33 32 33 Z" />
+    <path d="M32 33 C22 30 10 30 2 34 C10 38 22 38 32 34 Z" />
+    <path d="M32 33 C42 30 54 30 62 34 C54 38 42 38 32 34 Z" />
+  </g>
+
+  <g id="jasmine" fill="none" stroke="currentColor" stroke-width="1.2">
+    <g id="jasmine-petal"><ellipse cx="16" cy="7" rx="4.2" ry="6.4" /></g>
+    <use href="#jasmine-petal" transform="rotate(72 16 16)" />
+    <use href="#jasmine-petal" transform="rotate(144 16 16)" />
+    <use href="#jasmine-petal" transform="rotate(216 16 16)" />
+    <use href="#jasmine-petal" transform="rotate(288 16 16)" />
+    <circle cx="16" cy="16" r="2" fill="currentColor" stroke="none" />
+  </g>
+
+  <g id="jasmine-spray" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+    <path d="M14 96 C36 84 48 66 60 40 C72 66 84 84 106 96" />
+    <path d="M60 40 C60 28 60 20 60 12" />
+    <circle cx="60" cy="10" r="3.4" />
+    <g transform="translate(44 0) scale(.62)"><use href="#jasmine" /></g>
+    <g transform="translate(20 54) scale(.55)"><use href="#jasmine" /></g>
+    <g transform="translate(76 54) scale(.55)"><use href="#jasmine" /></g>
+    <path d="M40 70 C30 66 24 60 22 52 C32 52 38 58 42 66" fill="currentColor" fill-opacity=".1" />
+    <path d="M80 70 C90 66 96 60 98 52 C88 52 82 58 78 66" fill="currentColor" fill-opacity=".1" />
+  </g>
+
+  <g id="corner" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+    <path d="M4 40 C4 18 18 4 40 4" />
+    <path d="M4 56 C4 26 26 4 56 4" stroke-opacity=".5" />
+    <path d="M14 34 C14 24 24 14 34 14" stroke-dasharray="1 5" />
+    <circle cx="10" cy="10" r="2.6" fill="currentColor" stroke="none" />
+    <path d="M24 10 C30 10 34 6 34 2" stroke-opacity=".6" />
+    <path d="M10 24 C10 30 6 34 2 34" stroke-opacity=".6" />
+  </g>
+
+  <g id="vine" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+    <path d="M20 0 C20 30 20 50 20 160" stroke-dasharray="2 6" />
+    <g transform="translate(4 60) scale(.9)"><use href="#jasmine" /></g>
+    <path d="M20 30 C10 34 6 42 6 50" /><path d="M20 110 C30 114 34 122 34 130" />
+  </g>
+
+  <g id="gopuram" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M24 4 L30 12 H18 Z" />
+    <path d="M18 12 H30 L33 20 H15 Z" />
+    <path d="M15 20 H33 L36 30 H12 Z" />
+    <path d="M12 30 H36 L39 42 H9 Z" />
+    <path d="M20 42 V33 C20 30 28 30 28 33 V42" />
+    <path d="M6 44 H42" stroke-linecap="round" />
+  </g>
+
+  <g id="calendar" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+    <rect x="8" y="12" width="32" height="30" rx="2" />
+    <path d="M8 21 H40" /><path d="M16 8 V15" /><path d="M32 8 V15" />
+    <circle cx="17" cy="29" r="1.8" fill="currentColor" stroke="none" />
+    <circle cx="24" cy="29" r="1.8" fill="currentColor" stroke="none" />
+    <circle cx="31" cy="29" r="1.8" fill="currentColor" stroke="none" />
+    <circle cx="17" cy="36" r="1.8" fill="currentColor" stroke="none" />
+    <circle cx="24" cy="36" r="1.8" fill="currentColor" stroke="none" />
+  </g>
+
+  <g id="clock" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+    <circle cx="24" cy="25" r="17" />
+    <path d="M24 15 V25 L31 29" />
+    <path d="M24 6 V9" /><path d="M43 25 H40" /><path d="M8 25 H5" />
+  </g>
+
+</defs></svg>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── countdown to the muhurtham (12:00 PM IST, 22 Nov 2026) ─────────── */
+  var target = new Date('2026-11-22T12:00:00+05:30').getTime();
+  var grid = document.getElementById('grid');
+  var done = document.getElementById('done');
+  var cells = {};
+  Array.prototype.forEach.call(document.querySelectorAll('[data-unit]'), function (n) {
+    cells[n.getAttribute('data-unit')] = n;
+  });
+
+  function pad(n) { return String(n).length < 2 ? '0' + n : String(n); }
+
+  function tick() {
+    var left = target - Date.now();
+    if (left <= 0) {
+      grid.hidden = true;
+      done.hidden = false;
+      clearInterval(timer);
+      return;
+    }
+    var s = Math.floor(left / 1000);
+    cells.days.textContent    = pad(Math.floor(s / 86400));
+    cells.hours.textContent   = pad(Math.floor((s % 86400) / 3600));
+    cells.minutes.textContent = pad(Math.floor((s % 3600) / 60));
+    cells.seconds.textContent = pad(s % 60);
+  }
+
+  tick();
+  var timer = setInterval(tick, 1000);
+
+  /* ── drifting jasmine petals ────────────────────────────────────────── */
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var field = document.getElementById('flowers');
+    var frag = document.createDocumentFragment();
+
+    for (var i = 0; i < 14; i++) {
+      var size = 12 + Math.random() * 12;
+      var petal = document.createElement('span');
+      petal.className = 'flower' + (i % 3 === 0 ? ' flower--gold' : '');
+      petal.style.left = (Math.random() * 100) + 'vw';
+      petal.style.width = size + 'px';
+      petal.style.height = size + 'px';
+      petal.style.opacity = (0.32 + Math.random() * 0.36).toFixed(2);
+      petal.style.setProperty('--drift', (Math.random() * 12 - 6) + 'rem');
+      petal.style.animationDuration = (17 + Math.random() * 16) + 's';
+      petal.style.animationDelay = (-Math.random() * 30) + 's';
+      petal.innerHTML = '<svg viewBox="0 0 32 32" aria-hidden="true"><use href="#jasmine" /></svg>';
+      frag.appendChild(petal);
+    }
+    field.appendChild(frag);
+  }
+})();
+</script>

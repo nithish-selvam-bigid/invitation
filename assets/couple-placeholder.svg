@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Couple photograph placeholder">
+  <rect width="800" height="1000" fill="#f8f0e1"/>
+  <rect x="18" y="18" width="764" height="964" fill="none" stroke="#b08d3f" stroke-width="2"/>
+  <rect x="34" y="34" width="732" height="932" fill="none" stroke="#b08d3f" stroke-width="1" opacity=".5"/>
+  <g fill="none" stroke="#b08d3f" stroke-width="2" opacity=".8">
+    <circle cx="400" cy="430" r="150" stroke-dasharray="3 12"/>
+    <circle cx="400" cy="430" r="112"/>
+    <path d="M400 330c26 40 28 72 0 106-28-34-26-66 0-106z"/>
+    <path d="M400 436c-34-52-80-76-134-64 12 44 58 76 134 76z"/>
+    <path d="M400 436c34-52 80-76 134-64-12 44-58 76-134 76z"/>
+    <path d="M400 440c-58-20-128-20-174 12 46 32 116 32 174 6z"/>
+    <path d="M400 440c58-20 128-20 174 12-46 32-116 32-174 6z"/>
+  </g>
+  <text x="400" y="670" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#5c1a1b" letter-spacing="3">Your photograph here</text>
+  <text x="400" y="716" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#6f5849" font-style="italic">Replace assets/couple-placeholder.svg — portrait 4:5 works best</text>
+  <path d="M300 760h200" stroke="#b08d3f" stroke-width="1"/>
+</svg>

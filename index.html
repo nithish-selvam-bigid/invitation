@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<!-- ===========================================================
+     Page content comes from js/config.js.
+     The tags below are read by WhatsApp / social crawlers, which
+     do NOT run JavaScript, so edit these three by hand as well.
+     =========================================================== -->
+<title>Nithish &amp; Ramapriya — Engagement Invitation</title>
+<meta name="description" content="With the blessings of our families, we joyfully invite you to celebrate the engagement of Nithish and Ramapriya. Sunday, 22 November 2026, 12 PM onwards, Chennai." />
+<meta name="theme-color" content="#5c1a1b" />
+
+<meta property="og:url" content="https://nithish-selvam-bigid.github.io/invitation/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Engagement Invitation" />
+<meta property="og:title" content="Nithish &amp; Ramapriya — Engagement Invitation" />
+<meta property="og:description" content="Two hearts, one beautiful beginning. Sunday, 22 November 2026 · 12 PM onwards." />
+<meta property="og:image" content="https://nithish-selvam-bigid.github.io/invitation/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_IN" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&family=Jost:wght@300;400;500&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- ───────────────────────  floating jasmine  ─────────────────────── -->
+<div class="flowers" id="flowers" aria-hidden="true"></div>
+
+<!-- ───────────────────────  opening envelope  ─────────────────────── -->
+<div class="seal" id="seal">
+  <div class="seal__inner">
+    <svg class="seal__mandala" viewBox="0 0 220 220" aria-hidden="true"><use href="#kolam" /></svg>
+    <p class="seal__invocation" data-c="event.invocation"></p>
+    <p class="seal__eyebrow" data-c="event.title"></p>
+    <h1 class="seal__names">
+      <span data-c="couple.groom"></span><em>&amp;</em><span data-c="couple.bride"></span>
+    </h1>
+    <button class="btn btn--gold" id="sealBtn" type="button">Unseal the invitation</button>
+  </div>
+</div>
+
+<!-- ───────────────────────  music toggle  ─────────────────────────── -->
+<button class="music" id="musicBtn" type="button" hidden aria-pressed="false">
+  <svg class="music__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#note" /></svg>
+  <span class="music__label" id="musicLabel">Play music</span>
+</button>
+<audio id="audio" loop preload="none"></audio>
+
+<main class="page" id="page">
+
+  <!-- ══════════════════  1 · HERO  ══════════════════ -->
+  <section class="hero" id="hero">
+    <div class="toran" aria-hidden="true"><svg viewBox="0 0 1200 90" preserveAspectRatio="none"><use href="#toran" /></svg></div>
+
+    <div class="frame frame--hero">
+      <span class="frame__corner frame__corner--tl" aria-hidden="true"><svg viewBox="0 0 80 80"><use href="#corner" /></svg></span>
+      <span class="frame__corner frame__corner--tr" aria-hidden="true"><svg viewBox="0 0 80 80"><use href="#corner" /></svg></span>
+      <span class="frame__corner frame__corner--bl" aria-hidden="true"><svg viewBox="0 0 80 80"><use href="#corner" /></svg></span>
+      <span class="frame__corner frame__corner--br" aria-hidden="true"><svg viewBox="0 0 80 80"><use href="#corner" /></svg></span>
+
+      <p class="invocation reveal" data-c="event.invocation"></p>
+      <h1 class="hero__title reveal" data-c="event.title"></h1>
+      <p class="hero__subtitle reveal" data-c="event.subtitle"></p>
+
+      <div class="ornament reveal" aria-hidden="true">
+        <span class="ornament__rule"></span>
+        <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+        <span class="ornament__rule"></span>
+      </div>
+
+      <p class="hero__names reveal">
+        <span class="hero__name" data-c="couple.groom"></span>
+        <span class="hero__amp">&amp;</span>
+        <span class="hero__name" data-c="couple.bride"></span>
+      </p>
+
+      <p class="hero__tagline reveal" data-c="couple.tagline"></p>
+
+      <div class="hero__date reveal">
+        <span class="hero__date-line" aria-hidden="true"></span>
+        <span class="hero__date-text">
+          <strong data-c="event.dateLabel"></strong>
+          <em data-c="event.dateSub"></em>
+        </span>
+        <span class="hero__date-line" aria-hidden="true"></span>
+      </div>
+
+      <a class="btn btn--outline reveal" href="#details">View invitation</a>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ══════════════════  2 · INVITATION MESSAGE  ══════════════════ -->
+  <section class="message" id="message">
+    <div class="frame">
+      <svg class="message__motif reveal" viewBox="0 0 120 120" aria-hidden="true"><use href="#jasmine-spray" /></svg>
+      <p class="message__lead reveal" data-c="event.invitationLine"></p>
+      <p class="message__names reveal">
+        <span data-c="couple.groom"></span>
+        <em>&amp;</em>
+        <span data-c="couple.bride"></span>
+      </p>
+      <div class="ornament reveal" aria-hidden="true">
+        <span class="ornament__rule"></span>
+        <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+        <span class="ornament__rule"></span>
+      </div>
+      <p class="message__sub reveal" data-c="event.subtitle"></p>
+    </div>
+  </section>
+
+  <!-- ══════════════════  3 · EVENT DETAILS  ══════════════════ -->
+  <section class="details" id="details">
+    <header class="section__head reveal">
+      <p class="section__eyebrow">The Occasion</p>
+      <h2 class="section__title">Event Details</h2>
+      <div class="ornament" aria-hidden="true">
+        <span class="ornament__rule"></span>
+        <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+        <span class="ornament__rule"></span>
+      </div>
+    </header>
+
+    <div class="detail-grid">
+      <article class="detail reveal">
+        <span class="detail__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#calendar" /></svg></span>
+        <h3 class="detail__label">Date</h3>
+        <p class="detail__value" data-c="event.dateLabel"></p>
+        <p class="detail__note" data-c="event.dateSub"></p>
+      </article>
+
+      <article class="detail reveal">
+        <span class="detail__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#clock" /></svg></span>
+        <h3 class="detail__label">Time</h3>
+        <p class="detail__value" data-c="event.timeLabel"></p>
+        <p class="detail__note" data-c="event.timeSub"></p>
+      </article>
+
+      <article class="detail reveal">
+        <span class="detail__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#gopuram" /></svg></span>
+        <h3 class="detail__label">Venue</h3>
+        <p class="detail__value" data-c="venue.name"></p>
+        <p class="detail__note" id="venueAddress"></p>
+      </article>
+    </div>
+
+    <div class="details__actions reveal">
+      <a class="btn btn--gold" id="mapBtn" target="_blank" rel="noopener" hidden>View location</a>
+      <a class="btn btn--outline" id="calendarBtn" download="engagement.ics">Add to calendar</a>
+    </div>
+  </section>
+
+  <!-- ══════════════════  4 · COUPLE  ══════════════════ -->
+  <section class="couple" id="couple">
+    <div class="couple__inner">
+      <figure class="couple__figure reveal">
+        <span class="couple__frame" aria-hidden="true"></span>
+        <img id="couplePhoto" class="couple__photo" alt="" loading="lazy" />
+      </figure>
+
+      <div class="couple__body">
+        <p class="section__eyebrow reveal">Together</p>
+        <h2 class="couple__names reveal">
+          <span data-c="couple.groom"></span>
+          <em>&amp;</em>
+          <span data-c="couple.bride"></span>
+        </h2>
+        <div class="ornament ornament--left reveal" aria-hidden="true">
+          <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+          <span class="ornament__rule"></span>
+        </div>
+        <blockquote class="couple__quote reveal" data-c="couple.quote"></blockquote>
+        <p class="couple__tagline reveal" data-c="couple.tagline"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════  5 · COUNTDOWN  ══════════════════ -->
+  <section class="countdown" id="countdown" hidden>
+    <header class="section__head reveal">
+      <p class="section__eyebrow">Counting the days</p>
+      <h2 class="section__title">Until the celebration</h2>
+    </header>
+
+    <ul class="countdown__grid reveal" id="countdownGrid">
+      <li class="countdown__cell"><span class="countdown__num" data-unit="days">00</span><span class="countdown__label">Days</span></li>
+      <li class="countdown__cell"><span class="countdown__num" data-unit="hours">00</span><span class="countdown__label">Hours</span></li>
+      <li class="countdown__cell"><span class="countdown__num" data-unit="minutes">00</span><span class="countdown__label">Minutes</span></li>
+      <li class="countdown__cell"><span class="countdown__num" data-unit="seconds">00</span><span class="countdown__label">Seconds</span></li>
+    </ul>
+
+    <p class="countdown__done reveal" id="countdownDone" hidden>The day has arrived. Please join us.</p>
+  </section>
+
+  <!-- ══════════════════  6 · FAMILIES / BLESSINGS  ══════════════════ -->
+  <section class="families" id="families">
+    <header class="section__head reveal">
+      <p class="section__eyebrow">Blessings</p>
+      <h2 class="section__title">With the blessings of our families</h2>
+      <div class="ornament" aria-hidden="true">
+        <span class="ornament__rule"></span>
+        <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+        <span class="ornament__rule"></span>
+      </div>
+    </header>
+
+    <div class="families__grid">
+      <article class="family-card reveal" id="familyGroom"></article>
+      <div class="families__divider reveal" aria-hidden="true">
+        <svg viewBox="0 0 40 160" preserveAspectRatio="none"><use href="#vine" /></svg>
+      </div>
+      <article class="family-card reveal" id="familyBride"></article>
+    </div>
+
+    <p class="families__note reveal" data-c="families.note"></p>
+  </section>
+
+  <!-- ══════════════════  7 · CLOSING  ══════════════════ -->
+  <footer class="closing" id="closing">
+    <div class="frame frame--closing">
+      <svg class="closing__motif reveal" viewBox="0 0 120 120" aria-hidden="true"><use href="#jasmine-spray" /></svg>
+      <p class="closing__line reveal" data-c="event.closingLine"></p>
+      <p class="closing__names reveal">
+        <span data-c="couple.groom"></span>
+        <em>&amp;</em>
+        <span data-c="couple.bride"></span>
+      </p>
+
+      <div class="closing__rsvp reveal" id="rsvpBlock" hidden>
+        <p class="closing__rsvp-label" id="rsvpLabel">RSVP</p>
+        <div class="closing__actions">
+          <a class="btn btn--gold" id="whatsappBtn" target="_blank" rel="noopener">WhatsApp us</a>
+          <a class="btn btn--outline" id="phoneBtn"></a>
+        </div>
+      </div>
+
+      <svg class="closing__kolam reveal" viewBox="0 0 220 220" aria-hidden="true"><use href="#kolam" /></svg>
+    </div>
+    <div class="toran toran--bottom" aria-hidden="true"><svg viewBox="0 0 1200 90" preserveAspectRatio="none"><use href="#toran" /></svg></div>
+  </footer>
+</main>
+
+<!-- ══════════════════  SVG MOTIF SPRITE  ══════════════════ -->
+<svg class="sprite" aria-hidden="true" focusable="false"><defs>
+
+  <!-- kolam: dotted grid with looping gold curves -->
+  <g id="kolam" fill="none" stroke="currentColor" stroke-width="1.1">
+    <circle cx="110" cy="110" r="104" stroke-dasharray="1 7" stroke-linecap="round" />
+    <circle cx="110" cy="110" r="78" />
+    <circle cx="110" cy="110" r="30" stroke-dasharray="2 6" />
+    <g id="kolam-loop">
+      <path d="M110 32 C130 56 130 76 110 96 C90 76 90 56 110 32 Z" />
+      <circle cx="110" cy="22" r="2.6" fill="currentColor" stroke="none" />
+    </g>
+    <use href="#kolam-loop" transform="rotate(45 110 110)" />
+    <use href="#kolam-loop" transform="rotate(90 110 110)" />
+    <use href="#kolam-loop" transform="rotate(135 110 110)" />
+    <use href="#kolam-loop" transform="rotate(180 110 110)" />
+    <use href="#kolam-loop" transform="rotate(225 110 110)" />
+    <use href="#kolam-loop" transform="rotate(270 110 110)" />
+    <use href="#kolam-loop" transform="rotate(315 110 110)" />
+  </g>
+
+  <!-- toran: mango-leaf garland hanging from a cord -->
+  <g id="toran" fill="none" stroke="currentColor" stroke-width="1.4">
+    <path d="M0 10 Q300 40 600 10 Q900 40 1200 10" />
+    <g id="toran-unit">
+      <path d="M20 14 C10 34 12 56 20 72 C28 56 30 34 20 14 Z" fill="currentColor" fill-opacity=".14" />
+      <path d="M20 20 L20 66" stroke-opacity=".55" />
+    </g>
+    <use href="#toran-unit" x="30" /><use href="#toran-unit" x="60" /><use href="#toran-unit" x="90" />
+    <use href="#toran-unit" x="120" /><use href="#toran-unit" x="150" /><use href="#toran-unit" x="180" />
+    <use href="#toran-unit" x="210" /><use href="#toran-unit" x="240" /><use href="#toran-unit" x="270" />
+    <use href="#toran-unit" x="300" /><use href="#toran-unit" x="330" /><use href="#toran-unit" x="360" />
+    <use href="#toran-unit" x="390" /><use href="#toran-unit" x="420" /><use href="#toran-unit" x="450" />
+    <use href="#toran-unit" x="480" /><use href="#toran-unit" x="510" /><use href="#toran-unit" x="540" />
+    <use href="#toran-unit" x="570" /><use href="#toran-unit" x="600" /><use href="#toran-unit" x="630" />
+    <use href="#toran-unit" x="660" /><use href="#toran-unit" x="690" /><use href="#toran-unit" x="720" />
+    <use href="#toran-unit" x="750" /><use href="#toran-unit" x="780" /><use href="#toran-unit" x="810" />
+    <use href="#toran-unit" x="840" /><use href="#toran-unit" x="870" /><use href="#toran-unit" x="900" />
+    <use href="#toran-unit" x="930" /><use href="#toran-unit" x="960" /><use href="#toran-unit" x="990" />
+    <use href="#toran-unit" x="1020" /><use href="#toran-unit" x="1050" /><use href="#toran-unit" x="1080" />
+    <use href="#toran-unit" x="1110" /><use href="#toran-unit" x="1140" /><use href="#toran-unit" x="1170" />
+  </g>
+
+  <!-- lotus in profile -->
+  <g id="lotus" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">
+    <path d="M32 6 C37 14 38 24 32 32 C26 24 27 14 32 6 Z" />
+    <path d="M32 32 C26 22 18 18 10 20 C12 28 20 33 32 33 Z" />
+    <path d="M32 32 C38 22 46 18 54 20 C52 28 44 33 32 33 Z" />
+    <path d="M32 33 C22 30 10 30 2 34 C10 38 22 38 32 34 Z" />
+    <path d="M32 33 C42 30 54 30 62 34 C54 38 42 38 32 34 Z" />
+  </g>
+
+  <!-- jasmine flower (five petals) -->
+  <g id="jasmine" fill="none" stroke="currentColor" stroke-width="1.2">
+    <g id="jasmine-petal"><ellipse cx="16" cy="7" rx="4.2" ry="6.4" /></g>
+    <use href="#jasmine-petal" transform="rotate(72 16 16)" />
+    <use href="#jasmine-petal" transform="rotate(144 16 16)" />
+    <use href="#jasmine-petal" transform="rotate(216 16 16)" />
+    <use href="#jasmine-petal" transform="rotate(288 16 16)" />
+    <circle cx="16" cy="16" r="2" fill="currentColor" stroke="none" />
+  </g>
+
+  <!-- jasmine spray: strung flowers with leaves -->
+  <g id="jasmine-spray" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+    <path d="M14 96 C36 84 48 66 60 40 C72 66 84 84 106 96" />
+    <path d="M60 40 C60 28 60 20 60 12" />
+    <circle cx="60" cy="10" r="3.4" />
+    <g transform="translate(44 0) scale(.62)"><use href="#jasmine" /></g>
+    <g transform="translate(20 54) scale(.55)"><use href="#jasmine" /></g>
+    <g transform="translate(76 54) scale(.55)"><use href="#jasmine" /></g>
+    <path d="M40 70 C30 66 24 60 22 52 C32 52 38 58 42 66" fill="currentColor" fill-opacity=".1" />
+    <path d="M80 70 C90 66 96 60 98 52 C88 52 82 58 78 66" fill="currentColor" fill-opacity=".1" />
+  </g>
+
+  <!-- ornamental frame corner -->
+  <g id="corner" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+    <path d="M4 40 C4 18 18 4 40 4" />
+    <path d="M4 56 C4 26 26 4 56 4" stroke-opacity=".5" />
+    <path d="M14 34 C14 24 24 14 34 14" stroke-dasharray="1 5" />
+    <circle cx="10" cy="10" r="2.6" fill="currentColor" stroke="none" />
+    <path d="M24 10 C30 10 34 6 34 2" stroke-opacity=".6" />
+    <path d="M10 24 C10 30 6 34 2 34" stroke-opacity=".6" />
+  </g>
+
+  <!-- vine divider -->
+  <g id="vine" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+    <path d="M20 0 C20 30 20 50 20 160" stroke-dasharray="2 6" />
+    <g transform="translate(4 60) scale(.9)"><use href="#jasmine" /></g>
+    <path d="M20 30 C10 34 6 42 6 50" /><path d="M20 110 C30 114 34 122 34 130" />
+  </g>
+
+  <!-- gopuram / temple tower (venue icon) -->
+  <g id="gopuram" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M24 4 L30 12 H18 Z" />
+    <path d="M18 12 H30 L33 20 H15 Z" />
+    <path d="M15 20 H33 L36 30 H12 Z" />
+    <path d="M12 30 H36 L39 42 H9 Z" />
+    <path d="M20 42 V33 C20 30 28 30 28 33 V42" />
+    <path d="M6 44 H42" stroke-linecap="round" />
+  </g>
+
+  <!-- calendar -->
+  <g id="calendar" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+    <rect x="8" y="12" width="32" height="30" rx="2" />
+    <path d="M8 21 H40" /><path d="M16 8 V15" /><path d="M32 8 V15" />
+    <circle cx="17" cy="29" r="1.8" fill="currentColor" stroke="none" />
+    <circle cx="24" cy="29" r="1.8" fill="currentColor" stroke="none" />
+    <circle cx="31" cy="29" r="1.8" fill="currentColor" stroke="none" />
+    <circle cx="17" cy="36" r="1.8" fill="currentColor" stroke="none" />
+    <circle cx="24" cy="36" r="1.8" fill="currentColor" stroke="none" />
+  </g>
+
+  <!-- clock -->
+  <g id="clock" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+    <circle cx="24" cy="25" r="17" />
+    <path d="M24 15 V25 L31 29" />
+    <path d="M24 6 V9" /><path d="M43 25 H40" /><path d="M8 25 H5" />
+  </g>
+
+  <!-- music note -->
+  <g id="note" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 17 L19 14 V6" />
+    <circle cx="7" cy="18" r="2.6" />
+    <circle cx="17" cy="15" r="2.6" />
+  </g>
+
+</defs></svg>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
