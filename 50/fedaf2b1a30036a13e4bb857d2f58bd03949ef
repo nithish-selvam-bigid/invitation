@@ -1,0 +1,29 @@
+floral/index.html
+  s_6423558cf1a77a::t_bf3f51f71cecbd 1-393
+floral/favicon.svg
+  s_6423558cf1a77a::t_704cb9d944f7d4 1-13
+floral/og-image.svg
+  s_6423558cf1a77a::t_704cb9d944f7d4 1-47
+floral/styles.css
+  s_6423558cf1a77a::t_a077d42ac5e619 1-128,130-131,133-200,204-275,278,280-319,321,324-327,329-338,340-347,349-357,359-465,469-475,477-480,482-483,485-773
+  s_6423558cf1a77a::t_23ecebb879bb0b 129,132,201-203,276-277,279,320,322-323,328,339,348,358,466-468,476,481,484
+  s_6423558cf1a77a::t_449c2a4e058713 774-775
+README.md
+  s_6423558cf1a77a::t_ca2fd7209957b9 18-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "50fedaf2b1a30036a13e4bb857d2f58bd03949ef",
+  "prompts": {},
+  "sessions": {
+    "s_6423558cf1a77a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "22cd503e-e1ba-4300-8a49-7d48dd6a672c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "nithish-selvam-bigid <nselvam@bigid.com>"
+    }
+  }
+}
