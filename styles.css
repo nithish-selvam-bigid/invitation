@@ -230,7 +230,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
 }
 .seal[hidden]{display:none}
 .seal.is-open{opacity:0;visibility:hidden;pointer-events:none}
-.seal__inner{position:relative;display:grid;justify-items:center;gap:1rem;padding:2rem}
+.seal__inner{position:relative;display:grid;justify-items:center;gap:1rem;width:100%;max-width:34rem;padding:clamp(1.25rem,5vw,2rem)}
 .seal__mandala{
   position:absolute;
   top:50%;left:50%;
@@ -257,15 +257,23 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
 .seal__names{
   font-family:var(--display);
   color:var(--ivory);
-  font-size:clamp(2rem,1.3rem + 4.2vw,3.9rem);
+  font-size:clamp(1.7rem,1.1rem + 3.6vw,3.9rem);
   line-height:1.15;
   margin:.2rem 0 .8rem;
+  /* wrap instead of running off a narrow screen — the spans carry no
+     whitespace between them, so flex has to supply the break points */
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:center;
+  gap:.1em .3em;
+  max-width:100%;
 }
 .seal__names em{
   font-family:var(--serif);
   color:var(--gold-bright);
   font-style:italic;
-  padding:0 .35rem;
+  font-size:.72em;
 }
 .seal .btn--gold{
   color:var(--maroon-deep);
