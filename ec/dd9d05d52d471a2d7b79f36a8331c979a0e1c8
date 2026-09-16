@@ -1,0 +1,37 @@
+.gitignore
+  s_6423558cf1a77a::t_7ac6aa8bbb8970 1
+README.md
+  s_6423558cf1a77a::t_8847e65dcf6de2 1-70
+assets/couple-placeholder.svg
+  s_6423558cf1a77a::t_8fbd9bcbf2dc06 1-17
+assets/favicon.svg
+  s_6423558cf1a77a::t_f5d102f89b1425 1-13
+assets/og-image.svg
+  s_6423558cf1a77a::t_d6708edaa3f651 1-30
+dist/artifact.html
+  s_6423558cf1a77a::t_d601426c4a1ffb 1-772
+index.html
+  s_6423558cf1a77a::t_46b6e6c5a8a281 1-387
+js/app.js
+  s_6423558cf1a77a::t_ef0d3ffd73dadc 1-324
+js/config.js
+  s_6423558cf1a77a::t_5c1302ccd92d7a 1-96
+styles.css
+  s_6423558cf1a77a::t_0b1e96378935c6 1-833
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ecdd9d05d52d471a2d7b79f36a8331c979a0e1c8",
+  "prompts": {},
+  "sessions": {
+    "s_6423558cf1a77a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "22cd503e-e1ba-4300-8a49-7d48dd6a672c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "nithish-selvam-bigid <nselvam@bigid.com>"
+    }
+  }
+}
