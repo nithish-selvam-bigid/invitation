@@ -14,7 +14,8 @@ No build step, no backend, no dependencies (only Google Fonts over CDN).
 | `assets/favicon.svg` | Lotus favicon (gold on maroon) |
 | `assets/couple-placeholder.svg` | Replace with the couple photograph (4:5 portrait) |
 | `assets/og-image.png` | 1200×630 WhatsApp / social preview card (`assets/og-image.svg` is its editable source) |
-| `assets/music/invitation-melody.m4a` | 53-second looping instrumental, composed for this page (see below) |
+| `assets/music/invitation-ballad.m4a` | 58-second looping piano ballad, composed for this page (the default) |
+| `assets/music/invitation-melody.m4a` | 53-second brighter harp piece, the alternative |
 
 ## Two templates
 
@@ -61,23 +62,31 @@ countdown and the calendar file.
 
 ## The music
 
-`assets/music/invitation-melody.m4a` is an original piece written for this
-invitation, so no third-party licence is attached to it: harp-like arpeggios
-over a I–V–vi–IV progression in D major, a plain melody above, a warm pad
-underneath and a short reverb tail. 16 bars at 72 BPM — 53 seconds, AAC,
-~240 KB — and the loop is a whole number of bars, so it repeats without a
-seam.
+Two original pieces ship with the site, both written for it, so no third-party
+licence is attached to either:
 
-It starts on its own (`options.musicAutoplay`). Browsers refuse unmuted
-autoplay until the visitor has interacted with the page, so if the attempt is
-refused the music starts on their first tap instead — which is nearly always
-the tap that opens the envelope. Either way the volume fades in rather than
-cutting in, and the button in the corner stops it.
+- **`invitation-ballad.m4a`** (default) — a slow 6/8 piano ballad in G major
+  over the plain vi–IV–I–V turn, with a warm pad underneath, a melody that
+  comes round twice (the second pass an octave brighter) and a long reverb
+  tail. 32 bars at 66 BPM, 58 seconds, ~290 KB.
+- **`invitation-melody.m4a`** — brighter and lighter: harp-like arpeggios over
+  I–V–vi–IV in D major. 53 seconds, ~240 KB.
 
-To use your own track, drop the file in `assets/music/` and point
-`options.musicSrc` at it — config paths resolve against the config file's
-folder, so one value serves both templates. `options.musicAutoplay: false`
-requires a press on the button; `options.music: false` removes it entirely.
+Switch between them by changing `options.musicSrc` in `js/config.js`. Both
+loop a whole number of bars, so they repeat without an audible seam.
+
+Playback starts on its own (`options.musicAutoplay`). Browsers refuse unmuted
+autoplay until the visitor has interacted with the page, so a refused attempt
+falls back to their first tap — nearly always the tap that opens the envelope.
+The volume fades in rather than cutting in, and the corner button stops it.
+
+### Using a commercial track instead
+
+A popular song cannot simply be dropped in here: hosting a recording, or an
+instrumental cover of one, needs a licence from the rights holders even on a
+private invitation page. If you want a specific song, buy a licensed
+instrumental (a stock-music library, or a licensed cover from a marketplace),
+put the file in `assets/music/` and point `options.musicSrc` at it.
 
 ## Running locally
 

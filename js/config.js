@@ -91,7 +91,10 @@ window.INVITE = {
     music: true,            // show the music toggle (never autoplays)
     // Paths are resolved against the folder holding this config file, so the
     // same value works from the root template and from /floral/.
-    musicSrc: 'assets/music/invitation-melody.m4a',
+    // Two originals ship with the site — swap the filename to change track:
+    //   invitation-ballad.m4a — slow 6/8 piano ballad, warm and building
+    //   invitation-melody.m4a — brighter harp arpeggios in D major
+    musicSrc: 'assets/music/invitation-ballad.m4a',
     musicLabel: 'Play music',
     // Start the music on its own. Browsers block unmuted autoplay until the
     // visitor interacts, so it also starts on their first tap (opening the
