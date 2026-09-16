@@ -1,0 +1,33 @@
+floral/styles.css
+  s_6423558cf1a77a::t_f0f966d8f0089e 449-464,466
+  s_6423558cf1a77a::t_3524a64703bbda 432
+floral/index.html
+  s_6423558cf1a77a::t_f0f966d8f0089e 86
+index.html
+  s_6423558cf1a77a::t_f0f966d8f0089e 90
+js/app.js
+  s_6423558cf1a77a::t_4f4fa23f4664b1 30-43,104,317,321-334,340,347
+styles.css
+  s_6423558cf1a77a::t_f0f966d8f0089e 567-582,584
+  s_6423558cf1a77a::t_3524a64703bbda 547
+js/config.js
+  s_6423558cf1a77a::t_4f4fa23f4664b1 92-94
+README.md
+  s_6423558cf1a77a::t_0b8510ded660a2 17,62-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ce7985253e0a4f57c99faa434c4c09da77cc96e4",
+  "prompts": {},
+  "sessions": {
+    "s_6423558cf1a77a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "22cd503e-e1ba-4300-8a49-7d48dd6a672c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "nithish-selvam-bigid <nselvam@bigid.com>"
+    }
+  }
+}
