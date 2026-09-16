@@ -15,6 +15,18 @@ No build step, no backend, no dependencies (only Google Fonts over CDN).
 | `assets/couple-placeholder.svg` | Replace with the couple photograph (4:5 portrait) |
 | `assets/og-image.png` | 1200×630 WhatsApp / social preview card (`assets/og-image.svg` is its editable source) |
 
+## Two templates
+
+| Path | Look |
+| --- | --- |
+| `/` (root) | **Maroon & gold** — letterpress card on handmade paper, kolam medallions, mango-leaf toran, cream envelope with a maroon wax seal |
+| `/floral/` | **Floral** — ivory and dusty rose, sage foliage, jasmine garlands, a rose-wreathed hero and a rose in place of the wax seal |
+
+Both read the same `js/config.js`, so names, dates, venue and families are
+edited in one place and both designs update. The floral template loads
+`../js/config.js` and `../js/app.js`; only its markup and stylesheet differ.
+Each has its own favicon and OG card.
+
 ## Customising
 
 1. Open `js/config.js` and change the values. Names, dates, venue, family names,

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Floral engagement invitation">
+  <rect width="64" height="64" rx="10" fill="#fdf1f0"/>
+  <rect x="3.5" y="3.5" width="57" height="57" rx="8" fill="none" stroke="#c2a15f" stroke-width="1.2"/>
+  <g fill="none" stroke="#9b2f5f" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M32 14c12 3 16 14 11 23-5 9-17 11-24 5S16 23 25 19"/>
+    <path d="M32 22c7 2 9 8 6 13-3 5-11 5-14 1s-1-9 5-11"/>
+  </g>
+  <circle cx="32" cy="34" r="4" fill="#d4879c"/>
+  <g fill="none" stroke="#93a98c" stroke-width="2" stroke-linecap="round">
+    <path d="M14 46c6-2 10 0 13 4"/>
+    <path d="M50 46c-6-2-10 0-13 4"/>
+  </g>
+</svg>

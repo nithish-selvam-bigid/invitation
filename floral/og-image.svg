@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffdfb"/>
+      <stop offset="52%" stop-color="#fdf1f0"/>
+      <stop offset="100%" stop-color="#f4e6e6"/>
+    </linearGradient>
+    <g id="bloom" fill="none" stroke="#d4879c" stroke-width="1.6">
+      <g id="pt"><ellipse cx="16" cy="7.5" rx="4" ry="6" fill="#f6dfe3"/></g>
+      <use href="#pt" transform="rotate(72 16 16)"/>
+      <use href="#pt" transform="rotate(144 16 16)"/>
+      <use href="#pt" transform="rotate(216 16 16)"/>
+      <use href="#pt" transform="rotate(288 16 16)"/>
+      <circle cx="16" cy="16" r="1.9" fill="#c2a15f"/>
+    </g>
+    <g id="lf" fill="#e4ebde" stroke="#93a98c" stroke-width="1.3">
+      <path d="M12 2c10 6 10 18 0 24C2 20 2 8 12 2Z"/>
+    </g>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <ellipse cx="120" cy="60" rx="300" ry="190" fill="#f6dfe3" opacity=".55"/>
+  <ellipse cx="1120" cy="580" rx="300" ry="180" fill="#e4ebde" opacity=".6"/>
+
+  <g opacity=".95">
+    <path d="M0 22 Q300 74 600 34 Q900 74 1200 22" fill="none" stroke="#93a98c" stroke-width="2"/>
+    <g id="drop"><path d="M22 30v48" stroke="#93a98c" stroke-width="1.6"/><g transform="translate(6 70) scale(1.1)"><use href="#bloom"/></g></g>
+    <use href="#drop" x="58"/><use href="#drop" x="116"/><use href="#drop" x="174"/><use href="#drop" x="232"/>
+    <use href="#drop" x="290"/><use href="#drop" x="348"/><use href="#drop" x="406"/><use href="#drop" x="464"/>
+    <use href="#drop" x="522"/><use href="#drop" x="580"/><use href="#drop" x="638"/><use href="#drop" x="696"/>
+    <use href="#drop" x="754"/><use href="#drop" x="812"/><use href="#drop" x="870"/><use href="#drop" x="928"/>
+    <use href="#drop" x="986"/><use href="#drop" x="1044"/><use href="#drop" x="1102"/>
+  </g>
+
+  <rect x="56" y="150" width="1088" height="430" fill="none" stroke="#c2a15f" stroke-width="1.6"/>
+  <rect x="70" y="164" width="1060" height="402" fill="none" stroke="#d4879c" stroke-width="1" opacity=".55"/>
+
+  <g transform="translate(104 200)"><g transform="scale(2.4)"><use href="#lf"/></g></g>
+  <g transform="translate(1040 480) rotate(180)"><g transform="scale(2.4)"><use href="#lf"/></g></g>
+
+  <text x="600" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#93a98c" letter-spacing="10">ENGAGEMENT INVITATION</text>
+  <text x="600" y="352" text-anchor="middle" font-family="Georgia, serif" font-size="82" fill="#6f1f44">Nithish <tspan fill="#d4879c" font-style="italic">&amp;</tspan> Ramapriya</text>
+  <text x="600" y="412" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-style="italic" fill="#d4879c">Two hearts, one beautiful beginning.</text>
+  <path d="M480 448h240" stroke="#c2a15f" stroke-width="1"/>
+  <text x="600" y="500" text-anchor="middle" font-family="Georgia, serif" font-size="29" fill="#6f1f44" letter-spacing="4">Sunday, 22 November 2026</text>
+  <text x="600" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="21" fill="#93a98c" letter-spacing="6">12 PM ONWARDS</text>
+</svg>
