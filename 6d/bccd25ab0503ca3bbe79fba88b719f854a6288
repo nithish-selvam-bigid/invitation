@@ -1,0 +1,21 @@
+README.md
+  s_6423558cf1a77a::t_4983e3422bdeea 17-18,65-89
+js/config.js
+  s_6423558cf1a77a::t_974ab33b2905bf 94-97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6dbccd25ab0503ca3bbe79fba88b719f854a6288",
+  "prompts": {},
+  "sessions": {
+    "s_6423558cf1a77a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "22cd503e-e1ba-4300-8a49-7d48dd6a672c",
+        "model": "unknown"
+      },
+      "human_author": "nithish-selvam-bigid <nselvam@bigid.com>"
+    }
+  }
+}
