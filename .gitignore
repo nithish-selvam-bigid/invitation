@@ -1,1 +1,4 @@
 .DS_Store
+
+# local-only audio — not published
+assets/music/local/
