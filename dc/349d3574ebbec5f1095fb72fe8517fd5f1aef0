@@ -1,0 +1,14 @@
+js/config.js
+  h_c701a5ee5a064e 98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "dc349d3574ebbec5f1095fb72fe8517fd5f1aef0",
+  "prompts": {},
+  "humans": {
+    "h_c701a5ee5a064e": {
+      "author": "nithish-selvam-bigid <nselvam@bigid.com>"
+    }
+  }
+}
