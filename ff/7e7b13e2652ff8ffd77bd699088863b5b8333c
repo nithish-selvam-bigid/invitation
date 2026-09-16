@@ -1,0 +1,23 @@
+js/app.js
+  s_6423558cf1a77a::t_0335f68ba58039 69-74
+js/config.js
+  s_6423558cf1a77a::t_0335f68ba58039 48,50-52,54-55
+dist/artifact.html
+  s_6423558cf1a77a::t_be73387dd7f459 280-291,543-545
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ff7e7b13e2652ff8ffd77bd699088863b5b8333c",
+  "prompts": {},
+  "sessions": {
+    "s_6423558cf1a77a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "22cd503e-e1ba-4300-8a49-7d48dd6a672c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "nithish-selvam-bigid <nselvam@bigid.com>"
+    }
+  }
+}
