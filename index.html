@@ -40,6 +40,19 @@
 
 <!-- ───────────────────────  opening envelope  ─────────────────────── -->
 <div class="seal" id="seal">
+  <div class="seal__intro">
+    <p class="seal__invocation" data-c="event.invocation"></p>
+    <p class="seal__welcome" data-c="event.welcomeLine"></p>
+    <h1 class="seal__names">
+      <span data-c="couple.groom"></span><em>&amp;</em><span data-c="couple.bride"></span>
+    </h1>
+    <p class="seal__meta">
+      <span data-c="event.subtitle"></span>
+      <span class="seal__dot" aria-hidden="true">&middot;</span>
+      <span data-c="event.dateLabel"></span>
+    </p>
+  </div>
+
   <button class="envelope" id="envelope" type="button" aria-label="Open the invitation">
     <span class="envelope__shadow" aria-hidden="true"></span>
 
@@ -47,12 +60,13 @@
 
     <span class="envelope__card" aria-hidden="true">
       <span class="envelope__card-inner">
-        <span class="envelope__card-invocation" data-c="event.invocation"></span>
+        <span class="envelope__card-kicker" data-c="event.title"></span>
         <span class="envelope__card-names">
           <span data-c="couple.groom"></span><i>&amp;</i><span data-c="couple.bride"></span>
         </span>
         <span class="envelope__card-rule"></span>
         <span class="envelope__card-date" data-c="event.dateLabel"></span>
+        <span class="envelope__card-time" data-c="event.timeLabel"></span>
       </span>
     </span>
 
@@ -67,7 +81,7 @@
     </span>
   </button>
 
-  <p class="seal__hint" id="sealHint">Tap to open</p>
+  <p class="seal__hint" id="sealHint" data-c="event.openHint"></p>
 </div>
 
 <!-- ───────────────────────  music toggle  ─────────────────────────── -->

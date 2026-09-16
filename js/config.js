@@ -38,6 +38,9 @@ window.INVITE = {
       'We look forward to celebrating this beautiful beginning with you.',
     // Optional Sanskrit / Tamil invocation at the very top. Set to '' to hide.
     invocation: '॥ श्री गणेशाय नमः ॥',
+    // Shown on the opening envelope screen.
+    welcomeLine: 'You are invited',
+    openHint: 'Tap the envelope to open',
   },
 
   /* ── 3. THE VENUE ──────────────────────────────────────────────────────── */
