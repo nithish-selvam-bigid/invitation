@@ -124,12 +124,18 @@
   function initSeal() {
     const seal = $('#seal');
     const page = $('#page');
-    if (!seal || !page) return;
+    const envelope = $('#envelope');
+    const hint = $('#sealHint');
+    if (!seal || !page || !envelope) return;
 
     if (!C.options.envelope) { seal.hidden = true; return; }
 
     page.classList.add('is-hidden');
     document.body.style.overflow = 'hidden';
+
+    // flap swing + card rise, then the overlay clears
+    const FLAP_MS = reducedMotion ? 0 : 1100;
+    const CLEAR_MS = reducedMotion ? 0 : 700;
 
     let opened = false;
 
@@ -137,21 +143,24 @@
       if (opened) return;
       opened = true;
 
-      seal.classList.add('is-open');
-      page.classList.remove('is-hidden');
-      document.body.style.overflow = '';
+      envelope.classList.add('is-opening');
+      if (hint) hint.classList.add('is-gone');
 
-      // take the overlay out of the layer once it has faded (transitionend is
-      // unreliable here — a child button transition can fire it early)
-      setTimeout(() => { seal.hidden = true; }, 900);
+      setTimeout(() => {
+        seal.classList.add('is-open');
+        page.classList.remove('is-hidden');
+        document.body.style.overflow = '';
 
-      const hero = $('#hero');
-      hero.setAttribute('tabindex', '-1');
-      hero.focus({ preventScroll: true });
+        const hero = $('#hero');
+        hero.setAttribute('tabindex', '-1');
+        hero.focus({ preventScroll: true });
+
+        setTimeout(() => { seal.hidden = true; }, CLEAR_MS + 200);
+      }, FLAP_MS);
     }
 
-    $('#sealBtn').addEventListener('click', open);
-    seal.addEventListener('click', open);              // tapping anywhere works
+    envelope.addEventListener('click', open);
+    seal.addEventListener('click', open);            // tapping the backdrop works too
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' || e.key === 'Enter') open();
     });

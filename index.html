@@ -40,15 +40,34 @@
 
 <!-- ───────────────────────  opening envelope  ─────────────────────── -->
 <div class="seal" id="seal">
-  <div class="seal__inner">
-    <svg class="seal__mandala" viewBox="0 0 220 220" aria-hidden="true"><use href="#kolam" /></svg>
-    <p class="seal__invocation" data-c="event.invocation"></p>
-    <p class="seal__eyebrow" data-c="event.title"></p>
-    <h1 class="seal__names">
-      <span data-c="couple.groom"></span><em>&amp;</em><span data-c="couple.bride"></span>
-    </h1>
-    <button class="btn btn--gold" id="sealBtn" type="button">Unseal the invitation</button>
-  </div>
+  <button class="envelope" id="envelope" type="button" aria-label="Open the invitation">
+    <span class="envelope__shadow" aria-hidden="true"></span>
+
+    <span class="envelope__back" aria-hidden="true"></span>
+
+    <span class="envelope__card" aria-hidden="true">
+      <span class="envelope__card-inner">
+        <span class="envelope__card-invocation" data-c="event.invocation"></span>
+        <span class="envelope__card-names">
+          <span data-c="couple.groom"></span><i>&amp;</i><span data-c="couple.bride"></span>
+        </span>
+        <span class="envelope__card-rule"></span>
+        <span class="envelope__card-date" data-c="event.dateLabel"></span>
+      </span>
+    </span>
+
+    <span class="envelope__side envelope__side--l" aria-hidden="true"></span>
+    <span class="envelope__side envelope__side--r" aria-hidden="true"></span>
+    <span class="envelope__front" aria-hidden="true"></span>
+
+    <span class="envelope__flap" aria-hidden="true">
+      <span class="envelope__wax">
+        <svg viewBox="0 0 64 40"><use href="#lotus" /></svg>
+      </span>
+    </span>
+  </button>
+
+  <p class="seal__hint" id="sealHint">Tap to open</p>
 </div>
 
 <!-- ───────────────────────  music toggle  ─────────────────────────── -->

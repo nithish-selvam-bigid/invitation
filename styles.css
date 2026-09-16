@@ -221,73 +221,223 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
   inset:0;
   z-index:80;
   display:grid;
-  place-items:center;
+  place-content:center;
+  justify-items:center;
+  gap:clamp(1.5rem,5vw,2.5rem);
   padding:var(--gutter);
-  text-align:center;
+  perspective:1400px;
   background:
-    radial-gradient(circle at 50% 38%,#7a2426 0%,var(--maroon-deep) 62%,#2a0809 100%);
-  transition:opacity .85s var(--ease),visibility .85s;
+    radial-gradient(circle at 50% 42%,#7a2426 0%,var(--maroon-deep) 62%,#2a0809 100%);
+  transition:opacity .7s var(--ease),visibility .7s;
 }
 .seal[hidden]{display:none}
 .seal.is-open{opacity:0;visibility:hidden;pointer-events:none}
-.seal__inner{position:relative;display:grid;justify-items:center;gap:1rem;width:100%;max-width:34rem;padding:clamp(1.25rem,5vw,2rem)}
-.seal__mandala{
-  position:absolute;
-  top:50%;left:50%;
-  width:min(84vw,26rem);
-  aspect-ratio:1;
-  transform:translate(-50%,-50%);
-  color:var(--gold-pale);
-  opacity:.22;
-  animation:rotate 150s linear infinite;
+
+/* the envelope is the button — the whole thing is the click target */
+.envelope{
+  position:relative;
+  width:min(86vw,30rem);
+  aspect-ratio:3/2;
+  padding:0;
+  border:0;
+  background:none;
+  cursor:pointer;
+  transform-style:preserve-3d;
+  transition:transform .5s var(--ease);
 }
-.seal__invocation{
+.envelope:hover{transform:translateY(-4px)}
+.envelope:active{transform:translateY(-1px)}
+.envelope > *{position:absolute;inset:0}
+
+.envelope__shadow{
+  inset:auto 8% -6%;
+  height:8%;
+  border-radius:50%;
+  background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,.55),transparent 70%);
+  filter:blur(6px);
+}
+
+/* paper body behind everything */
+.envelope__back{
+  background:linear-gradient(160deg,#7d2527,#5c1a1b 52%,#471214);
+  border:1px solid rgba(230,211,163,.45);
+  border-radius:3px;
+  box-shadow:0 40px 80px -40px rgba(0,0,0,.7);
+}
+
+/* the card that rises out */
+.envelope__card{
+  inset:6% 7% 14%;
+  display:grid;
+  place-items:center;
+  padding:1rem;
+  background:linear-gradient(180deg,var(--ivory),#fdf4e4);
+  border:1px solid rgba(176,141,63,.6);
+  border-radius:2px;
+  box-shadow:0 18px 40px -26px rgba(0,0,0,.55);
+  transform:translateY(0);
+  z-index:1;
+}
+.envelope__card-inner{
+  display:grid;
+  justify-items:center;
+  gap:.35rem;
+  text-align:center;
+  padding:.4rem;
+  width:100%;
+}
+.envelope__card-invocation{
   font-family:var(--deva);
-  color:var(--gold-pale);
-  margin:0;
-  font-size:clamp(.9rem,.85rem + .35vw,1.1rem);
+  font-size:clamp(.6rem,.5rem + .55vw,.85rem);
+  color:var(--red-muted);
 }
-.seal__eyebrow{
-  margin:0;
-  font-size:.62rem;
-  letter-spacing:.38em;
-  text-transform:uppercase;
-  color:rgba(230,211,163,.8);
-}
-.seal__names{
-  font-family:var(--display);
-  color:var(--ivory);
-  font-size:clamp(1.7rem,1.1rem + 3.6vw,3.9rem);
-  line-height:1.15;
-  margin:.2rem 0 .8rem;
-  /* wrap instead of running off a narrow screen — the spans carry no
-     whitespace between them, so flex has to supply the break points */
+.envelope__card-names{
   display:flex;
   flex-wrap:wrap;
   align-items:baseline;
   justify-content:center;
-  gap:.1em .3em;
-  max-width:100%;
+  gap:0 .3em;
+  font-family:var(--display);
+  font-size:clamp(1.05rem,.8rem + 2.2vw,1.9rem);
+  line-height:1.2;
+  color:var(--maroon);
 }
-.seal__names em{
-  font-family:var(--serif);
-  color:var(--gold-bright);
-  font-style:italic;
-  font-size:.72em;
+.envelope__card-names i{font-family:var(--serif);font-style:italic;color:var(--gold-bright);font-size:.78em}
+.envelope__card-rule{
+  width:clamp(3rem,18%,5rem);
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
 }
-.seal .btn--gold{
-  color:var(--maroon-deep);
-  background:linear-gradient(135deg,var(--gold-pale),var(--gold-bright));
-  border-color:var(--gold-pale);
+.envelope__card-date{
+  font-family:var(--body);
+  font-size:clamp(.52rem,.44rem + .5vw,.72rem);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gold);
 }
-.seal .btn--gold:hover{background:linear-gradient(135deg,#f1e2bb,var(--gold-bright))}
 
-@keyframes rotate{to{transform:translate(-50%,-50%) rotate(360deg)}}
+/* front pocket — the V-folded face, covers the card's lower half */
+.envelope__front{
+  background:linear-gradient(170deg,#6d1f21,#551618 60%,#431113);
+  border-radius:0 0 3px 3px;
+  clip-path:polygon(0 2%,50% 86%,100% 2%,100% 100%,0 100%);
+  box-shadow:0 -1px 0 rgba(230,211,163,.22) inset;
+  z-index:2;
+}
+/* the two visible diagonal folds */
+.envelope__front::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  clip-path:polygon(0 2%,50% 86%,100% 2%,100% 3.4%,50% 87.4%,0 3.4%);
+  background:rgba(230,211,163,.3);
+}
 
-/* page fades in once the seal is opened */
-.page{position:relative;z-index:1}
+/* the folded-in side flaps — they keep the card hidden while it is inside */
+.envelope__side{
+  background:linear-gradient(120deg,#5e1b1d,#4d1517);
+  z-index:2;
+}
+.envelope__side--l{clip-path:polygon(0 0,58% 50%,0 100%)}
+.envelope__side--r{
+  clip-path:polygon(100% 0,42% 50%,100% 100%);
+  background:linear-gradient(240deg,#5e1b1d,#4d1517);
+}
+.envelope__side::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(230,211,163,.22);
+}
+.envelope__side--l::after{clip-path:polygon(0 0,58% 50%,57.2% 50%,0 1.2%)}
+.envelope__side--r::after{clip-path:polygon(100% 0,42% 50%,42.8% 50%,100% 1.2%)}
+
+/* the flap that swings open */
+.envelope__flap{
+  height:87%;   /* tip clears the pocket's fold, so nothing peeks through */
+  inset:0 0 auto;
+  transform-origin:top center;
+  transform:rotateX(0deg);
+  transform-style:preserve-3d;
+  background:linear-gradient(185deg,#8a2a2c,#651e20 70%);
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  z-index:4;
+  transition:transform 1s var(--ease);
+}
+.envelope__flap::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  clip-path:polygon(0 0,1.2% 0,50% 98%,98.8% 0,100% 0,50% 100%);
+  background:rgba(230,211,163,.35);
+}
+
+/* wax seal at the flap's point */
+.envelope__wax{
+  position:absolute;
+  left:50%;
+  top:86%;
+  width:clamp(2.4rem,13%,3.3rem);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,#e6d3a3,#c9a227 55%,#9c7620);
+  box-shadow:0 4px 10px -4px rgba(0,0,0,.6),0 0 0 1px rgba(92,26,27,.35) inset;
+}
+.envelope__wax svg{width:64%;height:auto;color:var(--maroon-deep);opacity:.85}
+
+/* ── the opening sequence ──────────────────────────────────────────────── */
+.envelope.is-opening{transform:none;cursor:default;pointer-events:none}
+
+.envelope.is-opening .envelope__flap{
+  animation:flap-open 1s var(--ease) forwards;
+}
+@keyframes flap-open{
+  0%{transform:rotateX(0deg);z-index:4}
+  49%{z-index:4}
+  50%{z-index:0}
+  100%{transform:rotateX(-172deg);z-index:0}
+}
+
+.envelope.is-opening .envelope__card{
+  animation:card-rise 1.1s var(--ease) .45s forwards;
+}
+@keyframes card-rise{
+  0%{transform:translateY(0) scale(1);z-index:1}
+  40%{z-index:3}
+  100%{transform:translateY(-46%) scale(1.04);z-index:3}
+}
+
+.envelope.is-opening .envelope__wax{
+  animation:wax-fade .5s var(--ease) forwards;
+}
+@keyframes wax-fade{to{opacity:0;transform:translate(-50%,-50%) scale(.82)}}
+
+.seal__hint{
+  margin:0;
+  font-family:var(--body);
+  font-size:.62rem;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--gold-pale);
+  opacity:.85;
+  animation:hint-pulse 3.2s ease-in-out infinite;
+}
+.seal__hint.is-gone{opacity:0;transition:opacity .4s var(--ease);animation:none}
+@keyframes hint-pulse{50%{opacity:.4}}
+
+/* page fades in once the envelope is open */
+.page{position:relative;z-index:1;transition:opacity .9s var(--ease) .1s}
 .page.is-hidden{opacity:0}
-.page{transition:opacity .9s var(--ease) .1s}
+
+@media (prefers-reduced-motion:reduce){
+  .envelope__flap,.envelope__card{transition:none;animation:none!important}
+  .envelope.is-opening .envelope__flap{transform:rotateX(-172deg)}
+  .envelope.is-opening .envelope__card{transform:translateY(-46%);z-index:3}
+  .seal__hint{animation:none}
+}
 
 /* ────────────────────────────  MUSIC  ─────────────────────────────────── */
 .music[hidden]{display:none}
