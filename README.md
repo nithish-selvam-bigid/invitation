@@ -14,6 +14,7 @@ No build step, no backend, no dependencies (only Google Fonts over CDN).
 | `assets/favicon.svg` | Lotus favicon (gold on maroon) |
 | `assets/couple-placeholder.svg` | Replace with the couple photograph (4:5 portrait) |
 | `assets/og-image.png` | 1200×630 WhatsApp / social preview card (`assets/og-image.svg` is its editable source) |
+| `assets/music/invitation.m4a` | 48-second looping instrumental, composed for this page (see below) |
 
 ## Two templates
 
@@ -57,6 +58,19 @@ Dates use ISO 8601 with a timezone offset — `+05:30` is IST. `event.dateLabel`
 and `event.timeLabel` are the strings printed on the card, so they can be worded
 freely (Tamil month, muhurtham etc.); `startsAt` / `endsAt` drive only the
 countdown and the calendar file.
+
+## The music
+
+`assets/music/invitation.m4a` is an original piece generated for this
+invitation — a tanpura-style drone under plucked phrases in raga Mohanam, so
+there is no third-party licence attached to it. 48 seconds, AAC, ~170 KB, and
+written to loop without a seam.
+
+It never autoplays: the button in the corner starts it, and the volume fades
+in over about a second rather than cutting in. To use your own track instead,
+drop the file in `assets/music/` and point `options.musicSrc` at it — paths in
+the config resolve against the config file's folder, so one value serves both
+templates. Set `options.music` to `false` to remove the button.
 
 ## Running locally
 

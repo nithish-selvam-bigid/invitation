@@ -429,7 +429,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
   position:fixed;
   right:calc(var(--gutter) * .75);
   bottom:calc(var(--gutter) * .75);
-  z-index:60;
+  z-index:90;
   display:inline-flex;
   align-items:center;
   gap:.55rem;
@@ -446,8 +446,24 @@ h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
   box-shadow:0 12px 28px -20px rgba(111,31,68,.7);
 }
 .music__icon{width:1.1rem;height:1.1rem;color:var(--rose);flex:none}
+/* playing state: the note gives way to three moving bars */
+.music__bars{display:none;align-items:flex-end;gap:2px;height:1.1rem;width:1.1rem;flex:none}
+.music__bars i{
+  display:block;
+  width:3px;
+  border-radius:1px;
+  background:currentColor;
+  animation:eq .9s ease-in-out infinite;
+}
+.music__bars i:nth-child(1){height:45%;animation-delay:-.2s}
+.music__bars i:nth-child(2){height:100%;animation-delay:-.55s}
+.music__bars i:nth-child(3){height:65%;animation-delay:-.35s}
+@keyframes eq{50%{transform:scaleY(.35)}}
+.music[aria-pressed="true"] .music__icon{display:none}
+.music[aria-pressed="true"] .music__bars{display:flex}
+
 .music[aria-pressed="true"]{background:var(--rani);color:var(--ivory)}
-.music[aria-pressed="true"] .music__icon{color:var(--blush)}
+.music[aria-pressed="true"] .music__bars{color:var(--blush)}
 @media (max-width:30rem){
   .music__label{display:none}
   .music{padding:.7rem;border-radius:50%}

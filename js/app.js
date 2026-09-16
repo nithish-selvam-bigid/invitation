@@ -27,6 +27,20 @@
   const reducedMotion =
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /** Site root — the folder holding config.js — so asset paths in the config
+   *  work from the root template and from a template in a subfolder alike. */
+  const ROOT = (() => {
+    const tag = Array.from(document.scripts)
+      .find((s) => /(^|\/)js\/config\.js(\?|$)/.test(s.src));
+    return tag ? tag.src.replace(/js\/config\.js.*$/, '') : '';
+  })();
+
+  /** Resolves a config path unless it is already absolute or a full URL. */
+  const asset = (path) =>
+    !path || /^([a-z]+:)?\/\//i.test(path) || path.startsWith('/')
+      ? path
+      : ROOT + path;
+
   /* ── text binding ───────────────────────────────────────────────────────
      Any element with data-c="path" receives the config value as text.       */
   function bindText() {
@@ -87,7 +101,7 @@
       return;
     }
 
-    photo.src = C.couple.photo;
+    photo.src = asset(C.couple.photo);
     photo.alt = C.couple.photoAlt || `${C.couple.groom} and ${C.couple.bride}`;
   }
 
@@ -300,22 +314,37 @@
     const label = $('#musicLabel');
     if (!button || !C.options.music || !C.options.musicSrc) return;
 
-    audio.src = C.options.musicSrc;
+    audio.src = asset(C.options.musicSrc);
     label.textContent = C.options.musicLabel || 'Play music';
     button.hidden = false;
+
+    audio.volume = 0;
+
+    // fade in and out rather than cutting the drone off mid-note
+    function ramp(to, ms) {
+      const from = audio.volume;
+      const start = performance.now();
+      (function step(now) {
+        const k = Math.min(1, (now - start) / ms);
+        audio.volume = from + (to - from) * k;
+        if (k < 1) requestAnimationFrame(step);
+        else if (to === 0) audio.pause();
+      })(start);
+    }
 
     button.addEventListener('click', () => {
       if (audio.paused) {
         audio.play().then(() => {
           button.setAttribute('aria-pressed', 'true');
           label.textContent = 'Pause music';
+          ramp(0.55, 900);
         }).catch(() => {
           label.textContent = 'Audio unavailable';
         });
       } else {
-        audio.pause();
         button.setAttribute('aria-pressed', 'false');
         label.textContent = C.options.musicLabel || 'Play music';
+        ramp(0, 500);
       }
     });
   }

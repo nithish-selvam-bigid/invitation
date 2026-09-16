@@ -89,7 +89,9 @@ window.INVITE = {
   options: {
     countdown: true,        // show the live countdown section
     music: true,            // show the music toggle (never autoplays)
-    musicSrc: '',           // e.g. 'assets/nadaswaram.mp3'  — empty hides the button
+    // Paths are resolved against the folder holding this config file, so the
+    // same value works from the root template and from /floral/.
+    musicSrc: 'assets/music/invitation.m4a',
     musicLabel: 'Play music',
     floatingFlowers: true,  // gentle jasmine petals drifting down
     flowerCount: 14,
