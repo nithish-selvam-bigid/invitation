@@ -1,0 +1,14 @@
+js/config.js
+  h_c701a5ee5a064e 10-11,13-16,19-20,25-26,28-29,31-34,36,38,40,42-43,48,50-52,55-56,63-65,69-71,73,81,84-86,91-92,98-99,104,106
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "957b95dff8b2741b5d56c8ec352b62a6357537f1",
+  "prompts": {},
+  "humans": {
+    "h_c701a5ee5a064e": {
+      "author": "nithish-selvam-bigid <nselvam@bigid.com>"
+    }
+  }
+}
