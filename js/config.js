@@ -91,8 +91,12 @@ window.INVITE = {
     music: true,            // show the music toggle (never autoplays)
     // Paths are resolved against the folder holding this config file, so the
     // same value works from the root template and from /floral/.
-    musicSrc: 'assets/music/invitation.m4a',
+    musicSrc: 'assets/music/invitation-melody.m4a',
     musicLabel: 'Play music',
+    // Start the music on its own. Browsers block unmuted autoplay until the
+    // visitor interacts, so it also starts on their first tap (opening the
+    // envelope counts). Set false to require a press on the button.
+    musicAutoplay: true,
     floatingFlowers: true,  // gentle jasmine petals drifting down
     flowerCount: 14,
     envelope: true,         // opening "unseal the invitation" overlay

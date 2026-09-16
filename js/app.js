@@ -307,7 +307,7 @@
     field.appendChild(frag);
   }
 
-  /* ── optional background music (never autoplays) ────────────────────── */
+  /* ── background music ───────────────────────────────────────────────── */
   function initMusic() {
     const button = $('#musicBtn');
     const audio = $('#audio');
@@ -315,37 +315,66 @@
     if (!button || !C.options.music || !C.options.musicSrc) return;
 
     audio.src = asset(C.options.musicSrc);
+    audio.volume = 0;
     label.textContent = C.options.musicLabel || 'Play music';
     button.hidden = false;
 
-    audio.volume = 0;
+    const VOLUME = 0.55;
 
-    // fade in and out rather than cutting the drone off mid-note
+    /** Fades the volume rather than cutting the music in or out.
+     *  Driven by a timer, not requestAnimationFrame: rAF is throttled or
+     *  suspended in background tabs, which would leave the volume at 0. */
+    let fadeTimer = null;
     function ramp(to, ms) {
       const from = audio.volume;
-      const start = performance.now();
-      (function step(now) {
-        const k = Math.min(1, (now - start) / ms);
-        audio.volume = from + (to - from) * k;
-        if (k < 1) requestAnimationFrame(step);
-        else if (to === 0) audio.pause();
-      })(start);
+      const steps = Math.max(1, Math.round(ms / 25));
+      let n = 0;
+      clearInterval(fadeTimer);
+      fadeTimer = setInterval(() => {
+        n += 1;
+        const k = Math.min(1, n / steps);
+        audio.volume = Math.max(0, Math.min(1, from + (to - from) * k));
+        if (k >= 1) {
+          clearInterval(fadeTimer);
+          if (to === 0) audio.pause();
+        }
+      }, 25);
+    }
+
+    function showPlaying() {
+      button.setAttribute('aria-pressed', 'true');
+      label.textContent = 'Pause music';
+    }
+
+    function showPaused() {
+      button.setAttribute('aria-pressed', 'false');
+      label.textContent = C.options.musicLabel || 'Play music';
+    }
+
+    function play(fadeMs) {
+      return audio.play().then(() => {
+        showPlaying();
+        ramp(VOLUME, fadeMs);
+      });
     }
 
     button.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play().then(() => {
-          button.setAttribute('aria-pressed', 'true');
-          label.textContent = 'Pause music';
-          ramp(0.55, 900);
-        }).catch(() => {
-          label.textContent = 'Audio unavailable';
-        });
-      } else {
-        button.setAttribute('aria-pressed', 'false');
-        label.textContent = C.options.musicLabel || 'Play music';
-        ramp(0, 500);
-      }
+      if (audio.paused) play(900).catch(() => { label.textContent = 'Audio unavailable'; });
+      else { showPaused(); ramp(0, 500); }
+    });
+
+    if (C.options.musicAutoplay === false) return;
+
+    // Try straight away. Browsers refuse unmuted autoplay until the visitor
+    // has interacted, so fall back to their first gesture — which is almost
+    // always the tap that opens the envelope.
+    play(1600).catch(() => {
+      const events = ['pointerdown', 'keydown', 'touchstart'];
+      const kick = () => {
+        events.forEach((e) => document.removeEventListener(e, kick, true));
+        play(1600).catch(() => {});
+      };
+      events.forEach((e) => document.addEventListener(e, kick, true));
     });
   }
 
