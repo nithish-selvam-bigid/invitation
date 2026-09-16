@@ -1,0 +1,24 @@
+styles.css
+  s_6423558cf1a77a::t_bf2556b02727ef 236-294
+  s_6423558cf1a77a::t_bb0c310a7ccf3f 230,321-322,324,333-334,348-359,388,391,400,405,411,417,429,439,453-455,457,488
+index.html
+  s_6423558cf1a77a::t_5f50ebf44caf80 43-55,63,69,84
+js/config.js
+  s_6423558cf1a77a::t_5f50ebf44caf80 41-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c3f8ba0f795c2ccf1707b1bfe919f87eca349c11",
+  "prompts": {},
+  "sessions": {
+    "s_6423558cf1a77a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "22cd503e-e1ba-4300-8a49-7d48dd6a672c",
+        "model": "claude-opus-5"
+      },
+      "human_author": "nithish-selvam-bigid <nselvam@bigid.com>"
+    }
+  }
+}
