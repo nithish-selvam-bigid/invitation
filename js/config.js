@@ -95,7 +95,7 @@ window.INVITE = {
     // Two originals ship with the site — swap the filename to change track:
     //   invitation-ballad.m4a — slow 6/8 piano ballad, warm and building
     //   invitation-melody.m4a — brighter harp arpeggios in D major
-    musicSrc: "assets/music/score.mp3",
+    musicSrc: "assets/music/score1.mp3",
     musicLabel: "Play music",
     // Start the music on its own. Browsers block unmuted autoplay until the
     // visitor interacts, so it also starts on their first tap (opening the
