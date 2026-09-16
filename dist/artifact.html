@@ -277,6 +277,18 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
   line-height:1.4;
 }
 .detail__note{font-family:var(--serif);font-size:1rem;color:var(--ink-soft);margin:0;line-height:1.55}
+.detail__link{margin:.9rem 0 0}
+.detail__link a{
+  font-family:var(--body);
+  font-size:.6rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--maroon);
+  text-decoration:none;
+  border-bottom:1px solid var(--gold);
+  padding-bottom:.15rem;
+}
+.detail__link a:hover{color:var(--red-muted);border-color:var(--gold-bright)}
 
 /* ── 4 · vow / quote ───────────────────────────────────────────────────── */
 .vow{position:relative;overflow:hidden}
@@ -528,8 +540,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
       <article class="detail">
         <span class="detail__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#gopuram" /></svg></span>
         <h3 class="detail__label">Venue</h3>
-        <p class="detail__value">To be announced</p>
-        <p class="detail__note">Chennai &middot; details to follow</p>
+        <p class="detail__value">Vettri Krishnan Mahal</p>
+        <p class="detail__note">49/1, Govindan Road<br />Near Srinivasa Theatre, West Mambalam<br />Chennai, Tamil Nadu 600033</p>
+        <p class="detail__link"><a href="https://www.google.com/maps/search/?api=1&amp;query=Vettri+Krishnan+Mahal+West+Mambalam+Chennai" target="_blank" rel="noopener">View location</a></p>
       </article>
     </div>
   </section>

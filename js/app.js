@@ -66,8 +66,12 @@
 
     const map = $('#mapBtn');
     if (map) {
-      if (C.venue.mapUrl) map.href = C.venue.mapUrl;
-      else map.hidden = true;
+      if (C.venue.mapUrl) {
+        map.href = C.venue.mapUrl;
+        map.hidden = false;
+      } else {
+        map.hidden = true;
+      }
     }
   }
 

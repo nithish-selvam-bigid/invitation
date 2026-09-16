@@ -45,15 +45,14 @@ window.INVITE = {
 
   /* ── 3. THE VENUE ──────────────────────────────────────────────────────── */
   venue: {
-    // TODO — not supplied yet. Replace all four values below.
-    name: 'Venue to be announced',
+    name: 'Vettri Krishnan Mahal',
     addressLines: [
-      'Chennai, Tamil Nadu',
-      'Details will follow shortly',
+      '49/1, Govindan Road',
+      'Near Srinivasa Theatre, West Mambalam',
+      'Chennai, Tamil Nadu 600033',
     ],
-    // Paste any Google / Apple Maps link here.
-    // Leave empty to hide the "View location" button.
-    mapUrl: '',
+    // Paste any Google / Apple Maps link here. Leave empty to hide the button.
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Vettri+Krishnan+Mahal+West+Mambalam+Chennai',
   },
 
   /* ── 4. THE FAMILIES ───────────────────────────────────────────────────── */
