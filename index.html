@@ -76,7 +76,7 @@
 
     <span class="envelope__flap" aria-hidden="true">
       <span class="envelope__wax">
-        <svg viewBox="0 0 64 40"><use href="#lotus" /></svg>
+        <svg viewBox="0 0 64 46"><use href="#rings" /></svg>
       </span>
     </span>
   </button>
@@ -107,9 +107,9 @@
       <h1 class="hero__title reveal" data-c="event.title"></h1>
       <p class="hero__subtitle reveal" data-c="event.subtitle"></p>
 
-      <div class="ornament reveal" aria-hidden="true">
+      <div class="ornament ornament--rings reveal" aria-hidden="true">
         <span class="ornament__rule"></span>
-        <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+        <svg class="ornament__rings" viewBox="0 0 64 46"><use href="#rings" /></svg>
         <span class="ornament__rule"></span>
       </div>
 
@@ -146,9 +146,9 @@
         <em>&amp;</em>
         <span data-c="couple.bride"></span>
       </p>
-      <div class="ornament reveal" aria-hidden="true">
+      <div class="ornament ornament--rings reveal" aria-hidden="true">
         <span class="ornament__rule"></span>
-        <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+        <svg class="ornament__rings" viewBox="0 0 64 46"><use href="#rings" /></svg>
         <span class="ornament__rule"></span>
       </div>
       <p class="message__sub reveal" data-c="event.subtitle"></p>
@@ -211,8 +211,8 @@
           <em>&amp;</em>
           <span data-c="couple.bride"></span>
         </h2>
-        <div class="ornament ornament--left reveal" aria-hidden="true">
-          <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
+        <div class="ornament ornament--left ornament--rings reveal" aria-hidden="true">
+          <svg class="ornament__rings" viewBox="0 0 64 46"><use href="#rings" /></svg>
           <span class="ornament__rule"></span>
         </div>
         <blockquote class="couple__quote reveal" data-c="couple.quote"></blockquote>
@@ -330,6 +330,20 @@
   </g>
 
   <!-- lotus in profile -->
+  <!-- two interlocked rings — marks the couple, not a section -->
+  <g id="rings" fill="none" stroke="currentColor" stroke-linejoin="round">
+    <g stroke-width="1.6">
+      <circle cx="23" cy="23" r="11.5" />
+      <circle cx="41" cy="23" r="11.5" />
+    </g>
+    <g stroke-width=".8" stroke-opacity=".55">
+      <circle cx="23" cy="23" r="8.6" />
+      <circle cx="41" cy="23" r="8.6" />
+    </g>
+    <!-- the left band passes over the right where they meet -->
+    <path d="M29.6 13.9 A11.5 11.5 0 0 0 29.6 32.1" stroke-width="2.6" stroke="currentColor" />
+  </g>
+
   <g id="lotus" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">
     <path d="M32 6 C37 14 38 24 32 32 C26 24 27 14 32 6 Z" />
     <path d="M32 32 C26 22 18 18 10 20 C12 28 20 33 32 33 Z" />

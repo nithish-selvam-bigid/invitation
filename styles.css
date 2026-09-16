@@ -124,6 +124,8 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
   background:linear-gradient(90deg,transparent,currentColor 45%,currentColor 55%,transparent);
 }
 .ornament__lotus{width:3.2rem;height:2rem;flex:none;color:var(--gold-bright)}
+.ornament__rings{width:3.4rem;height:2.45rem;flex:none;color:var(--gold-bright)}
+.ornament--rings{max-width:21rem}
 
 /* toran — mango-leaf garland strung across the top of a section */
 .toran{
@@ -454,7 +456,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
   box-shadow:0 5px 12px -4px rgba(0,0,0,.65),0 0 0 1px rgba(230,211,163,.55),
              0 0 0 4px rgba(230,211,163,.14);
 }
-.envelope__wax svg{width:64%;height:auto;color:var(--gold-pale);opacity:.95}
+.envelope__wax svg{width:74%;height:auto;color:var(--gold-pale);opacity:.95}
 
 /* ── the opening sequence ──────────────────────────────────────────────── */
 .envelope.is-opening{transform:none;cursor:default;pointer-events:none}
