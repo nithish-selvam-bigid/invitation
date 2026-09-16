@@ -318,16 +318,16 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
   background:none;
   cursor:pointer;
   transform-style:preserve-3d;
-  transition:transform .5s var(--ease);
+  animation:envelope-float 4.4s ease-in-out infinite;
 }
-.envelope:hover{transform:translateY(-4px)}
-.envelope:active{transform:translateY(-1px)}
+.envelope:hover,.envelope:focus-visible{animation-duration:2.6s}
 .envelope > *{position:absolute;inset:0}
 
 .envelope__shadow{
   inset:auto 8% -6%;
   height:8%;
   border-radius:50%;
+  animation:shadow-settle 4.4s ease-in-out infinite;
   background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,.55),transparent 70%);
   filter:blur(6px);
 }
@@ -472,8 +472,22 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
 }
 .envelope__wax svg{width:74%;height:auto;color:var(--gold-pale);opacity:.95}
 
+
+/* ── idle float: the envelope breathes on its own ──────────────────────── */
+@keyframes envelope-float{
+  0%,100%{transform:translateY(0) rotate(-.2deg)}
+  50%{transform:translateY(-11px) rotate(.2deg)}
+}
+/* the shadow is a child, so it moves with the envelope — pull it back down
+   and shrink it as the envelope lifts, which is what sells the height */
+@keyframes shadow-settle{
+  0%,100%{transform:translateY(0) scaleX(1);opacity:1}
+  50%{transform:translateY(11px) scaleX(.86);opacity:.6}
+}
+
 /* ── the opening sequence ──────────────────────────────────────────────── */
-.envelope.is-opening{transform:none;cursor:default;pointer-events:none}
+.envelope.is-opening{animation:none;transform:none;cursor:default;pointer-events:none}
+.envelope.is-opening .envelope__shadow{animation:none}
 
 .envelope.is-opening .envelope__flap{
   animation:flap-open 1s var(--ease) forwards;
