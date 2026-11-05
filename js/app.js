@@ -2,7 +2,7 @@
    app.js — renders window.INVITE into the page.
    Small independent "components", each an IIFE-free init function called once
    at the bottom. No dependencies, no build step.
-   ========================================================================= */
+   ============================================================================= */
 
 (function () {
   'use strict';
@@ -27,7 +27,7 @@
   const reducedMotion =
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /** Site root — the folder holding config.js — so asset paths in the config
+  /** Site root — the folder holding config.js — so - asset paths in the config
    *  work from the root template and from a template in a subfolder alike. */
   const ROOT = (() => {
     const tag = Array.from(document.scripts)
