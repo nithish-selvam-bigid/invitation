@@ -24,7 +24,7 @@ window.INVITE = {
     dateLabel: "Sunday, 22 November 2026",
     dateSub: "Shubha Muhurtham",
     timeLabel: "10:30 AM onwards",
-    timeSub: "Lunch will be served",
+    timeSub: "",
     closingLine:
       "We look forward to celebrating this beautiful beginning with you.",
     // Optional invocation at the very top. Set to '' to hide.

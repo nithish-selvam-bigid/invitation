@@ -135,8 +135,8 @@
     page.classList.add('is-hidden');
     document.body.style.overflow = 'hidden';
 
-    // flap swing + card rise, then the overlay clears
-    const FLAP_MS = reducedMotion ? 0 : 1100;
+    // the envelope grows and fades, then the overlay clears
+    const FLAP_MS = reducedMotion ? 0 : 400;
     const CLEAR_MS = reducedMotion ? 0 : 700;
 
     let opened = false;
