@@ -724,7 +724,16 @@ section,.closing{position:relative;padding:var(--section-y) var(--gutter)}
 .closing__rsvp[hidden]{display:none}
 .closing__rsvp-label{font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--sage);margin:0 0 1rem}
 .closing__actions{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
-.closing__couple{width:min(72vw,16rem);height:auto;color:var(--rose);opacity:.95;margin:2.2rem auto 0}
+/* no frame: the painting's paper dissolves into the card's paper —
+   edges faded out, multiplied so the card's tint shows through */
+.closing__couple{
+  width:min(100%,26rem);
+  height:auto;
+  margin:1.4rem auto 0;
+  mix-blend-mode:multiply;
+  -webkit-mask-image:radial-gradient(ellipse 52% 56% at 50% 52%,#000 62%,transparent 100%);
+  mask-image:radial-gradient(ellipse 52% 56% at 50% 52%,#000 62%,transparent 100%);
+}
 
 /* ──────────────────────  DRIFTING ROSE PETALS  ──────────────────────── */
 .petals{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}

@@ -1003,11 +1003,16 @@ section,.closing{
   justify-content:center;
 }
 .closing__couple{
-  width:min(72vw,16rem);
+  /* no frame: the painting's paper dissolves into the card's paper —
+     edges faded out, multiplied so the card's grain shows through,
+     tones warmed a touch toward the cream and gold */
+  width:min(100%,26rem);
   height:auto;
-  color:var(--gold);
-  opacity:.9;
-  margin:2.4rem auto 0;
+  margin:1.6rem auto 0;
+  mix-blend-mode:multiply;
+  filter:sepia(.14) saturate(.9);
+  -webkit-mask-image:radial-gradient(ellipse 52% 56% at 50% 52%,#000 62%,transparent 100%);
+  mask-image:radial-gradient(ellipse 52% 56% at 50% 52%,#000 62%,transparent 100%);
 }
 
 /* ───────────────────────  FLOATING JASMINE  ───────────────────────────── */
