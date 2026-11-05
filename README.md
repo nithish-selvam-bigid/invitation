@@ -7,12 +7,11 @@ No build step, no backend, no dependencies (only Google Fonts over CDN).
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | Markup for the seven sections + the SVG motif sprite (kolam, toran, lotus, jasmine, gopuram, ornamental corners) |
+| `index.html` | Markup for the five sections + the SVG motif sprite (kolam, toran, lotus, jasmine, gopuram, ornamental corners) |
 | `styles.css` | Design system — colour tokens, paper texture, framed sections, responsive rules, print styles |
-| `js/config.js` | **Everything you need to edit.** Names, dates, venue, families, quotes, photo, RSVP, options |
-| `js/app.js` | Renders the config into the page: countdown, .ics calendar file, scroll reveals, jasmine petals, music toggle |
+| `js/config.js` | **Everything you need to edit.** Names, dates, venue, families, RSVP, options |
+| `js/app.js` | Renders the config into the page: countdown, scroll reveals, jasmine petals, music toggle |
 | `assets/favicon.svg` | Lotus favicon (gold on maroon) |
-| `assets/couple-placeholder.svg` | Replace with the couple photograph (4:5 portrait) |
 | `assets/og-image.png` | 1200×630 WhatsApp / social preview card (`assets/og-image.svg` is its editable source) |
 | `assets/music/invitation-ballad.m4a` | 58-second looping piano ballad, composed for this page (the default) |
 | `assets/music/invitation-melody.m4a` | 53-second brighter harp piece, the alternative |
@@ -32,13 +31,11 @@ Each has its own favicon and OG card.
 ## Customising
 
 1. Open `js/config.js` and change the values. Names, dates, venue, family names,
-   quotes, RSVP number and the feature toggles all live there.
-2. Replace `assets/couple-placeholder.svg` with your photograph and point
-   `couple.photo` at it.
-3. Edit the three social tags in `index.html` `<head>` — `<title>`,
+   RSVP number and the feature toggles all live there.
+2. Edit the three social tags in `index.html` `<head>` — `<title>`,
    `meta[name=description]`, `og:*`. WhatsApp and other crawlers do not run
    JavaScript, so those cannot be filled from the config.
-4. Re-render `assets/og-image.png` after editing `assets/og-image.svg`:
+3. Re-render `assets/og-image.png` after editing `assets/og-image.svg`:
 
    ```sh
    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
@@ -57,8 +54,7 @@ Each has its own favicon and OG card.
 
 Dates use ISO 8601 with a timezone offset — `+05:30` is IST. `event.dateLabel`
 and `event.timeLabel` are the strings printed on the card, so they can be worded
-freely (Tamil month, muhurtham etc.); `startsAt` / `endsAt` drive only the
-countdown and the calendar file.
+freely (Tamil month, muhurtham etc.); `startsAt` drives only the countdown.
 
 ## The music
 

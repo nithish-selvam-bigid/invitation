@@ -75,7 +75,7 @@ img{max-width:100%;display:block}
   padding-inline:var(--gutter);
   padding-block:clamp(3.5rem,9vw,5.5rem) clamp(3rem,8vw,5rem);
   display:grid;
-  gap:clamp(3rem,8vw,5.5rem);
+  gap:clamp(1.75rem,4.5vw,3.25rem);
 }
 
 /* mango-leaf toran strung across the top of the page */
@@ -418,14 +418,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
   max-width:28ch;
   margin:0 auto 1.3rem;
 }
-.closing__names{font-size:clamp(1.5rem,1.05rem + 2.2vw,2.3rem)}
 .closing__kolam{width:min(62%,13rem);height:auto;color:var(--gold);opacity:.35;margin:2.2rem auto 0}
-.closing__blessing{
-  font-family:var(--deva);
-  color:var(--red-muted);
-  margin:1.6rem 0 0;
-  font-size:1.05rem;
-}
 
 /* ── floating jasmine ──────────────────────────────────────────────────── */
 .flowers{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
@@ -476,7 +469,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
     <span class="corner corner--bl" aria-hidden="true"><svg viewBox="0 0 80 80"><use href="#corner" /></svg></span>
     <span class="corner corner--br" aria-hidden="true"><svg viewBox="0 0 80 80"><use href="#corner" /></svg></span>
 
-    <p class="invocation">॥ श्री गणेशाय नमः ॥</p>
+    <p class="invocation">Sriramajeyam</p>
     <h1 class="title">Engagement Invitation</h1>
     <p class="card__occasion">Nichayathartham</p>
 
@@ -493,26 +486,13 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
       <span class="card__when-rule" aria-hidden="true"></span>
       <span class="card__when-text">
         <strong>Sunday, 22 November 2026</strong>
-        <em>12:00 PM onwards</em>
+        <em>10:30 AM onwards</em>
       </span>
       <span class="card__when-rule" aria-hidden="true"></span>
     </div>
   </section>
 
-  <!-- 2 · the message -->
-  <section class="panel">
-    <svg class="message__motif" viewBox="0 0 120 120" aria-hidden="true"><use href="#jasmine-spray" /></svg>
-    <p class="message__lead">With the blessings of our families, we joyfully invite you to celebrate the engagement of</p>
-    <p class="names message__names">Nithish <em>&amp;</em> Ramapriya</p>
-    <div class="ornament" aria-hidden="true">
-      <span class="ornament__rule"></span>
-      <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
-      <span class="ornament__rule"></span>
-    </div>
-    <p class="card__occasion">Nichayathartham</p>
-  </section>
-
-  <!-- 3 · details -->
+  <!-- 2 · details -->
   <section class="details">
     <p class="eyebrow">The Occasion</p>
     <h2 class="title">Event Details</h2>
@@ -533,7 +513,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
       <article class="detail">
         <span class="detail__icon"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#clock" /></svg></span>
         <h3 class="detail__label">Time</h3>
-        <p class="detail__value">12:00 PM onwards</p>
+        <p class="detail__value">10:30 AM onwards</p>
         <p class="detail__note">Lunch will be served</p>
       </article>
 
@@ -547,15 +527,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
     </div>
   </section>
 
-  <!-- 4 · vow -->
-  <section class="panel vow">
-    <svg class="vow__kolam" viewBox="0 0 220 220" aria-hidden="true"><use href="#kolam" /></svg>
-    <p class="eyebrow">Together</p>
-    <blockquote class="vow__quote">Bound not by ceremony alone, but by the quiet promise of every day that follows.</blockquote>
-    <p class="names vow__names">Nithish <em>&amp;</em> Ramapriya</p>
-  </section>
-
-  <!-- 5 · countdown -->
+  <!-- 3 · countdown -->
   <section class="countdown">
     <p class="eyebrow">Counting the days</p>
     <h2 class="title">Until the celebration</h2>
@@ -568,10 +540,10 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
     <p class="countdown__done" id="done" hidden>The day has arrived. Please join us.</p>
   </section>
 
-  <!-- 6 · families -->
+  <!-- 4 · families -->
   <section class="families">
     <p class="eyebrow">Blessings</p>
-    <h2 class="title">With the blessings of our families</h2>
+    <h2 class="title">Our Families</h2>
     <div class="ornament" aria-hidden="true">
       <span class="ornament__rule"></span>
       <svg class="ornament__lotus" viewBox="0 0 64 40"><use href="#lotus" /></svg>
@@ -583,8 +555,8 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
         <p class="family__heading">Bride's Family</p>
         <p class="family__relation">Daughter of</p>
         <ul class="family__parents">
-          <li>Thiru. Ravichandran</li>
-          <li>Tmt. Gayathri Ravichandran</li>
+          <li>Thiru. E. Ravichandran</li>
+          <li>Tmt. R. Gayathi</li>
         </ul>
         <p class="family__place">Saidapet</p>
       </article>
@@ -595,23 +567,19 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
         <p class="family__heading">Groom's Family</p>
         <p class="family__relation">Son of</p>
         <ul class="family__parents">
-          <li>Thiru. Selvam</li>
-          <li>Tmt. Kalyani Selvam</li>
+          <li>Thiru. A. Selvam</li>
+          <li>Tmt. R. Kalyani</li>
         </ul>
         <p class="family__place">Sriperumbudur</p>
       </article>
     </div>
-
-    <p class="families__note">Together with their brothers, sisters and well-wishers</p>
   </section>
 
-  <!-- 7 · closing -->
+  <!-- 5 · closing -->
   <section class="panel">
     <svg class="closing__motif" viewBox="0 0 120 120" aria-hidden="true"><use href="#jasmine-spray" /></svg>
     <p class="closing__line">We look forward to celebrating this beautiful beginning with you.</p>
-    <p class="names closing__names">Nithish <em>&amp;</em> Ramapriya</p>
     <svg class="closing__kolam" viewBox="0 0 220 220" aria-hidden="true"><use href="#kolam" /></svg>
-    <p class="closing__blessing">॥ शुभम् भवतु ॥</p>
   </section>
 </div>
 
@@ -731,8 +699,8 @@ h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;margin:
 (function () {
   'use strict';
 
-  /* ── countdown to the muhurtham (12:00 PM IST, 22 Nov 2026) ─────────── */
-  var target = new Date('2026-11-22T12:00:00+05:30').getTime();
+  /* ── countdown to the muhurtham (10:30 AM IST, 22 Nov 2026) ─────────── */
+  var target = new Date('2026-11-22T10:30:00+05:30').getTime();
   var grid = document.getElementById('grid');
   var done = document.getElementById('done');
   var cells = {};

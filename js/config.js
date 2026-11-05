@@ -1,6 +1,6 @@
 /* ============================================================================
    INVITATION CONFIG  —  edit this file only.
-   Everything on the page (names, dates, venue, quotes, images, music, colours)
+   Everything on the page (names, dates, venue, families, music, colours)
    is read from this single object at load time.
    ========================================================================= */
 
@@ -12,12 +12,6 @@ window.INVITE = {
     // Shown in the browser tab and in WhatsApp / social previews.
     shortTitle: "Nithish & Ramapriya",
     tagline: "Two hearts, one beautiful beginning.",
-    quote:
-      "Bound not by ceremony alone, but by the quiet promise of every day that follows.",
-    // Couple photograph. Replace with your own (portrait or square works best).
-    // Leave empty to hide the photograph entirely.
-    photo: "",
-    photoAlt: "Nithish and Ramapriya",
   },
 
   /* ── 2. THE EVENT ──────────────────────────────────────────────────────── */
@@ -25,19 +19,16 @@ window.INVITE = {
     title: "Engagement Invitation",
     subtitle: "Nichayathartham",
     // ISO 8601 with timezone offset. +05:30 = India Standard Time.
-    startsAt: "2026-11-22T12:00:00+05:30",
-    endsAt: "2026-11-22T15:30:00+05:30",
+    startsAt: "2026-11-22T10:30:00+05:30",
     // Human-readable strings (shown on the card — keep them in your own words).
     dateLabel: "Sunday, 22 November 2026",
     dateSub: "Shubha Muhurtham",
-    timeLabel: "12:00 PM onwards",
+    timeLabel: "10:30 AM onwards",
     timeSub: "Lunch will be served",
-    invitationLine:
-      "With the blessings of our families, we joyfully invite you to celebrate the engagement of",
     closingLine:
       "We look forward to celebrating this beautiful beginning with you.",
-    // Optional Sanskrit / Tamil invocation at the very top. Set to '' to hide.
-    invocation: "॥ श्री गणेशाय नमः ॥",
+    // Optional invocation at the very top. Set to '' to hide.
+    invocation: "|| Sri Ramajeyam ||",
     // Shown on the opening envelope screen.
     welcomeLine: "You are invited",
     openHint: "Tap the envelope to open",
@@ -61,16 +52,15 @@ window.INVITE = {
     groom: {
       heading: "Groom's Family",
       relation: "Son of",
-      parents: ["Thiru. Selvam", "Tmt. Kalyani Selvam"],
+      parents: ["Thiru. A. Selvam", "Tmt. R. Kalyani"],
       place: "Sriperumbudur",
     },
     bride: {
       heading: "Bride's Family",
       relation: "Daughter of",
-      parents: ["Thiru. Ravichandran", "Tmt. Gayathri Ravichandran"],
+      parents: ["Thiru. E. Ravichandran", "Tmt. R. Gayathi"],
       place: "Saidapet",
     },
-    note: "Together with their brothers, sisters and well-wishers",
   },
 
   /* ── 5. RSVP (optional — set enabled:false to hide the block) ───────────── */

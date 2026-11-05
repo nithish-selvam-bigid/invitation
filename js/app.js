@@ -60,8 +60,8 @@
       if (node) node.setAttribute('content', value);
     };
     set('meta[name="description"]',
-      `${C.event.invitationLine} ${C.couple.groom} & ${C.couple.bride}. ` +
-      `${C.event.dateLabel}, ${C.venue.name}.`);
+      `${C.couple.groom} & ${C.couple.bride} — ${C.event.title}. ` +
+      `${C.event.dateLabel}, ${C.event.timeLabel}, ${C.venue.name}.`);
     set('meta[property="og:title"]', title);
     set('meta[property="og:description"]',
       `${C.couple.tagline} ${C.event.dateLabel} · ${C.venue.name}.`);
@@ -87,22 +87,6 @@
         map.hidden = true;
       }
     }
-  }
-
-  /* ── couple photograph ──────────────────────────────────────────────── */
-  function bindCouple() {
-    const photo = $('#couplePhoto');
-    if (!photo) return;
-
-    // no photograph yet — drop the frame rather than show a placeholder
-    if (!C.couple.photo) {
-      const figure = photo.closest('.couple__figure');
-      if (figure) figure.remove();
-      return;
-    }
-
-    photo.src = asset(C.couple.photo);
-    photo.alt = C.couple.photoAlt || `${C.couple.groom} and ${C.couple.bride}`;
   }
 
   /* ── family cards ───────────────────────────────────────────────────── */
@@ -222,36 +206,6 @@
 
     tick();
     timer = setInterval(tick, 1000);
-  }
-
-  /* ── add to calendar (.ics built client-side) ───────────────────────── */
-  function initCalendar() {
-    const button = $('#calendarBtn');
-    if (!button) return;
-
-    const stamp = (value) =>
-      new Date(value).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-    const escape = (text) =>
-      String(text).replace(/([,;\\])/g, '\\$1').replace(/\n/g, '\\n');
-
-    const ics = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//Engagement Invitation//EN',
-      'CALSCALE:GREGORIAN',
-      'BEGIN:VEVENT',
-      `UID:${Date.now()}@invitation`,
-      `DTSTAMP:${stamp(Date.now())}`,
-      `DTSTART:${stamp(C.event.startsAt)}`,
-      `DTEND:${stamp(C.event.endsAt)}`,
-      `SUMMARY:${escape(`${C.event.title} — ${C.couple.groom} & ${C.couple.bride}`)}`,
-      `LOCATION:${escape([C.venue.name].concat(C.venue.addressLines).join(', '))}`,
-      `DESCRIPTION:${escape(C.event.invitationLine + ' ' + C.couple.groom + ' & ' + C.couple.bride)}`,
-      'END:VEVENT',
-      'END:VCALENDAR',
-    ].join('\r\n');
-
-    button.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
   }
 
   /* ── section reveals ────────────────────────────────────────────────── */
@@ -382,13 +336,11 @@
   bindText();
   bindMeta();
   bindVenue();
-  bindCouple();
   renderFamily('#familyGroom', C.families.groom);
   renderFamily('#familyBride', C.families.bride);
   bindRsvp();
   initSeal();
   initCountdown();
-  initCalendar();
   initReveal();
   initFlowers();
   initMusic();
