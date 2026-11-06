@@ -58,7 +58,7 @@ window.INVITE = {
     bride: {
       heading: "Bride's Family",
       relation: "Daughter of",
-      parents: ["Thiru. E. Ravichandran", "Tmt. R. Gayathi"],
+      parents: ["Thiru. E. Ravichandran", "Tmt. R. Gayathri"],
       place: "Saidapet",
     },
   },
